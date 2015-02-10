@@ -6,18 +6,17 @@ This repository provides a framework for writing a PhD thesis in Markdown. I use
 
 Markdown is a super-friendly plain text format that can be easily converted to a bunch of other formats like PDF, Word and Latex. You'll enjoy working in Markdown because: 
 - it is a clean, plain-text format...
-- ...but you can use Latex when you need it (for example, in laying out mathematical equations).
+- ...but you can use Latex when you need it (for example, in laying out mathematical formula).
 - it doesn't suffer from the freezes and crashes that some of us experience when working with large, image-heavy Word documents.
 - it automatically handles the table of contents, bibliography etc with Pandoc.
-- comments, drafts of text, etc can be added directly to your document by wrapping them in &lt;--  --&gt;
+- comments, drafts of text, etc can be added to the document by wrapping them in &lt;--  --&gt;
 - it works well with Git, so keeping backups is straightforward. Just commit the changes and then push them to your repository.
-- it doesn't lock you in. If you decide that Markdown isn't for you, then just output to Word, or whatever, and continue working in the new format.
+- there is no lock-in. If you decide that Markdown isn't for you, then just output to Word, or whatever, and continue working in the new format.
 
 ## Are there any reasons not to use Markdown?
 
 There are some minor annoyances:
 - if you haven't worked with Markdown before then you'll find yourself referring to the style-guide fairly often at first.
-- you won't be able to escape Latex completely because it is needed for styling and maths.
 - it isn't possible to add a short caption to figures and tables. This means that /listoftables and /listoffigures include the long-caption, which probably isn't what you want. If you want to include the list of tables and list of figures, then you have to write them manually.
 - all of the templates in this framework need work. The PDF output is fine, but HTML and Word need work if you plan to use these formats.
 - ... if there are more, please add them here.
