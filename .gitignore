@@ -52,3 +52,6 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# ignore DS store files
+.DS_Store
