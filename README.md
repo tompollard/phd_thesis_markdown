@@ -27,10 +27,10 @@ There are some minor annoyances:
 - README.md => these instructions.
 - License.md => terms of reuse (MIT license).
 - Makefile => contains instructions for using Pandoc to produce the final thesis.
-- output/ => the folder that contains the final version.
-- source/ => the folder that contains the thesis content. Includes the references.bib file.
-- source/figures/ => contains the figures.
-- style/ => style document used when laying out the PDF, Word document etc. 
+- output/ => directory to hold the final version.
+- source/ => directory to hold the thesis content. Includes the references.bib file.
+- source/figures/ => directory to hold the figures.
+- style/ => directory to hold the style documents.
 
 ## How do I get started?
 
