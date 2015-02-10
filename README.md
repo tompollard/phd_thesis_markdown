@@ -18,7 +18,7 @@ Markdown is a super-friendly plain text format that can be easily converted to a
 There are some minor annoyances:
 - if you haven't worked with Markdown before then you'll find yourself referring to the style-guide fairly often at first.
 - it isn't possible to add a short caption to figures and tables. This means that /listoftables and /listoffigures include the long-caption, which probably isn't what you want. If you want to include the list of tables and list of figures, then you have to write them manually.
-- all of the templates in this framework could be improved. The PDF output is acceptable as it is, but HTML and Word need work if you plan to use these formats.
+- all of the style documents in this framework could be improved. The PDF output is acceptable as it is, but HTML and Word need work if you plan to use these formats.
 - ... if there are more, please add them here.
 
 ## How is the template organised?
