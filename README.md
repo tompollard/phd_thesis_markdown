@@ -37,7 +37,8 @@ There are some minor annoyances:
 - A text editor, like [Sublime](https://www.sublimetext.com/), which is what you'll use write the thesis.  
 - Latex, needed for things like styling.  
 - [Pandoc](http://johnmacfarlane.net/pandoc), for converting the Markdown to other formats.  
-- Git, for version control.   
+- Git, for version control. 
+ 
 2. [Fork the repository](https://github.com/tompollard/phd_thesis_markdown/fork) on Github  
 3. Clone the repository onto your local computer (or [download the Zip file](https://github.com/tompollard/phd_thesis_markdown/archive/master.zip)).  
 4. Navigate to the directory that contains the Makefile and type "make pdf" to update the PDF in the output directory.  
