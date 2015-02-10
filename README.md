@@ -9,7 +9,7 @@ Markdown is a super-friendly plain text format that can be easily converted to a
 - ...but you can use Latex when you need it (for example, in laying out mathematical equations).
 - it doesn't suffer from the freezes and crashes that some of us experience when working with large, image-heavy Word documents.
 - it automatically handles the table of contents, bibliography etc with Pandoc.
-- comments, drafts of text, etc can be added directly to your document by wrapping it in &lt;-- notes here --&gt;
+- comments, drafts of text, etc can be added directly to your document by wrapping them in &lt;--  --&gt;
 - it works well with Git, so keeping backups is straightforward. Just commit the changes and then push them to your repository.
 - it doesn't lock you in. If you decide that Markdown isn't for you, then just output to Word, or whatever, and continue working in the new format.
 
