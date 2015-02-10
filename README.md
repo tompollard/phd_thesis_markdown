@@ -33,15 +33,15 @@ There are some minor annoyances:
 
 ## How do I get started?
 
-1) Install the following software:
-- A text editor, like [Sublime](https://www.sublimetext.com/), which is what you'll use write the thesis.
-- Latex, needed for things like styling.
-- [Pandoc](http://johnmacfarlane.net/pandoc), for converting the Markdown to other formats.
-- Git, for version control.
-2) [Fork the repository](https://github.com/tompollard/phd_thesis_markdown/fork) on Github
-3) Clone the repository onto your local computer (or [download the Zip file](https://github.com/tompollard/phd_thesis_markdown/archive/master.zip)).
-4) Navigate to the directory that contains the Makefile and type "make pdf" to update the PDF in the output directory.
-5) Edit the files in the 'source' directory, then goto step 4.
+1. Install the following software:
+- A text editor, like [Sublime](https://www.sublimetext.com/), which is what you'll use write the thesis.  
+- Latex, needed for things like styling.  
+- [Pandoc](http://johnmacfarlane.net/pandoc), for converting the Markdown to other formats.  
+- Git, for version control.   
+2. [Fork the repository](https://github.com/tompollard/phd_thesis_markdown/fork) on Github  
+3. Clone the repository onto your local computer (or [download the Zip file](https://github.com/tompollard/phd_thesis_markdown/archive/master.zip)).  
+4. Navigate to the directory that contains the Makefile and type "make pdf" to update the PDF in the output directory.  
+5. Edit the files in the 'source' directory, then goto step 4.  
 
 ## What else do I need to know?
 
