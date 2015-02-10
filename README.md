@@ -27,9 +27,10 @@ There are some minor annoyances:
 - README.md => these instructions.
 - License.md => terms of reuse (MIT license).
 - Makefile => contains instructions for using Pandoc to produce the final thesis.
-- /output => the folder that contains the final version. Includes the references (bibtex) and a subfolder for figures.
-- /source => the folder that contains the thesis content.
-- /style => style document used when laying out the PDF, Word document etc.
+- output/ => the folder that contains the final version.
+- source/ => the folder that contains the thesis content. Includes the references.bib file.
+- source/figures/ => contains the figures.
+- style/ => style document used when laying out the PDF, Word document etc. 
 
 ## How do I get started?
 
@@ -59,6 +60,6 @@ Contributions to the template are encouraged! There are lots of things that coul
 - cleaning up the Latex templates, which are messy at the moment.
 - improving the style of Word and Tex outputs.
 
-If you'd like to contribute, please fork and edit the project then send a pull request.
+Please fork and edit the project, then send a pull request.
 
 
