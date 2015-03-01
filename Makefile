@@ -52,8 +52,6 @@ tex:
 docx:
 	pandoc $(INPUTDIR)/*.md \
 	-o $(OUTPUTDIR)/thesis.docx \
-	-V fontsize=12pt \
-	-V documentclass:report \
 	--bibliography=$(BIBFILE) \
 	--csl=$(STYLEDIR)/ref_format.csl \
 	--toc
@@ -61,10 +59,10 @@ docx:
 html:
 	pandoc $(INPUTDIR)/*.md \
 	-o $(OUTPUTDIR)/thesis.html \
-	-V fontsize=12pt \
-	-V documentclass:report \
+	--standalone \
 	--bibliography=$(BIBFILE) \
 	--csl=$(STYLEDIR)/ref_format.csl \
-	--toc
+	--toc \
+	--number-sections
 
 .PHONY: help pdf docx html tex
