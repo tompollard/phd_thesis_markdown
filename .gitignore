@@ -55,3 +55,6 @@ target/
 
 # ignore DS store files
 .DS_Store
+
+# Node modules
+node_modules/
