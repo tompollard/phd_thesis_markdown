@@ -1,0 +1,133 @@
+<style>
+body {
+    font-family: Georgia;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 30px;
+    font-size: 18px;
+    padding-left: 350px;
+    padding-right: 50px;
+    color: #111;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial;
+}
+
+h1 {
+    padding-top: 200px;
+    line-height: 50px;
+}
+h2 {
+    padding-top: 30px;
+}
+h3 {
+    padding-top: 20px;
+}
+h4 {
+    padding-top: 10px;
+}
+p {
+    text-align: justify;
+}
+p a {
+    word-wrap: break-word;
+    white-space: pre;
+}
+code {
+    word-wrap: break-word;
+}
+blockquote {
+    border-left: 3px solid #eee;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+::selection {
+    background-color: #E4E4E4;
+}
+
+table {
+    width: 100%;
+}
+table caption {
+    font-weight: bold;
+}
+table tr {
+    padding: 0;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+table tr.even {
+    background-color: #fafafa;
+}
+table td {
+    margin: 0;
+    padding: 3px 5px;
+}
+
+p span.added {
+    color: green;
+    background-color: #FFF3C5;
+}
+p span.removed {
+    color: red;
+    background-color: #FFF3C5;
+}
+
+#title-page {
+    padding: 80px 0;
+}
+
+#TOC {
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: scroll;
+    height: 100%;
+    background: #fafafa;
+    max-width: 300px;
+    font-family: Arial;
+    font-size: 15px;
+    line-height: 30px;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background-color: #ECECEC;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #B0B0B0;
+    border-radius: 8px;
+}
+#TOC > ul {
+    padding-right: 10px;
+}
+#TOC ul {
+    list-style: none;
+    padding-left: 20px;
+}
+#TOC ul li a {
+    text-decoration: none;
+    color: #364149;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#TOC ul li a:hover {
+    color: #008cff;
+}
+
+.figure {
+    text-align: center;
+}
+.figure p {
+    text-align: center;
+    font-style: italic;
+}
+.figure img {
+      width: 100%;
+}
+</style>

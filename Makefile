@@ -60,9 +60,14 @@ html:
 	pandoc $(INPUTDIR)/*.md \
 	-o $(OUTPUTDIR)/thesis.html \
 	--standalone \
+	--template=$(STYLEDIR)/template.html \
 	--bibliography=$(BIBFILE) \
 	--csl=$(STYLEDIR)/ref_format.csl \
+	--include-in-header=$(STYLEDIR)/style.css \
 	--toc \
 	--number-sections
+	rm -rf $(OUTPUTDIR)/source
+	mkdir $(OUTPUTDIR)/source
+	cp -r $(INPUTDIR)/figures $(OUTPUTDIR)/source/figures
 
 .PHONY: help pdf docx html tex
