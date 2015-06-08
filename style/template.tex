@@ -5,6 +5,10 @@ $else$
 \usepackage{lmodern}
 $endif$
 
+% fix for pandoc 1.14
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 % TP: hack to truncate list of figures/tables.
 \usepackage{truncate}
 \usepackage{caption}
