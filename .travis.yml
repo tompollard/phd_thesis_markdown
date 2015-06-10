@@ -19,3 +19,4 @@ before_install:
 # Attempt to create a PDF
 script: 
   - make pdf
+  - make html 
