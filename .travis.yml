@@ -1,0 +1,21 @@
+# Link repository with Travis CI
+# https://travis-ci.org/
+
+# Whitelist gh-pages branch
+branches:
+  only:
+    - master
+
+# Set the language
+language: bash
+
+# Try install Pandoc
+before_install: 
+  - sudo apt-get install pandoc
+  - sudo apt-get install texlive-xetex texlive-latex-recommended texlive-latex-extra 
+  - sudo apt-get install texlive-fonts-recommended texlive-fonts-extra
+  - sudo apt-get install texlive-science
+
+# Attempt to create a PDF
+script: 
+  - make pdf
