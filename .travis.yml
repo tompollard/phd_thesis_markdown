@@ -9,14 +9,24 @@ branches:
 # Set the language
 language: bash
 
-# Try install Pandoc
-before_install: 
-  - sudo apt-get install pandoc
-  - sudo apt-get install texlive-xetex texlive-latex-recommended texlive-latex-extra 
+# Set the environment path to include Pandoc binaries
+env:
+  global:
+    - PATH=$TRAVIS_BUILD_DIR/usr/bin/:$PATH
+
+before_install:
+  # Fetch pandoc and pandoc-citeproc binaries
+  - wget https://github.com/jgm/pandoc/releases/download/1.15.0.5/pandoc-1.15.0.5-1-amd64.deb && ar p pandoc-1.15.0.5-1-amd64.deb data.tar.gz | tar zx
+  # Install TeX Live
+  - sudo add-apt-repository -y ppa:texlive-backports/ppa
+  - sudo apt-get update -qq
+  - sudo apt-get install texlive-xetex texlive-latex-recommended texlive-latex-extra
   - sudo apt-get install texlive-fonts-recommended texlive-fonts-extra
   - sudo apt-get install texlive-science
+  # Install fonts
+  - sudo apt-get install lmodern
 
 # Attempt to create a PDF
-script: 
+script:
   - make pdf
-  - make html 
+  - make html

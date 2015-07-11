@@ -3,8 +3,8 @@
 % Table of contents formatting
 \renewcommand{\contentsname}{Table of Contents}
 \setcounter{tocdepth}{3}
- 
-% Headers and page numbering 
+
+% Headers and page numbering
 \usepackage{fancyhdr}
 \pagestyle{plain}
 
@@ -24,7 +24,7 @@
 % \definecolor{gray75}{gray}{0.75}
 % \newcommand{\hsp}{\hspace{20pt}}
 % \titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
- 
+
 % % Fonts and typesetting
 % \setmainfont[Scale=1.1]{Helvetica}
 % \setsansfont[Scale=1.1]{Verdana}
@@ -33,12 +33,12 @@
 \usepackage{xunicode}
 \usepackage{xltxtra}
 \defaultfontfeatures{Mapping=tex-text} % converts LaTeX specials (``quotes'' --- dashes etc.) to unicode
-\setromanfont[Scale=1.01,Ligatures={Common},Numbers={OldStyle}]{Palatino}
+% \setromanfont[Scale=1.01,Ligatures={Common},Numbers={OldStyle}]{Palatino}
 % \setromanfont[Scale=1.01,Ligatures={Common},Numbers={OldStyle}]{Adobe Caslon Pro}
 %Following line controls size of code chunks
-\setmonofont[Scale=0.9]{Monaco} 
+% \setmonofont[Scale=0.9]{Monaco}
 %Following line controls size of figure legends
-\setsansfont[Scale=1.2]{Optima Regular} 
+% \setsansfont[Scale=1.2]{Optima Regular}
 
 %Attempt to set math size
 %First size must match the text size in the document or command will not work
@@ -46,17 +46,17 @@
 \DeclareMathSizes{12}{13}{13}{13}
 
 % ---- CUSTOM AMPERSAND
-\newcommand{\amper}{{\fontspec[Scale=.95]{Adobe Caslon Pro}\selectfont\itshape\&}}
+% \newcommand{\amper}{{\fontspec[Scale=.95]{Adobe Caslon Pro}\selectfont\itshape\&}}
 
 % HEADINGS
-\usepackage{sectsty} 
-\usepackage[normalem]{ulem} 
-\sectionfont{\rmfamily\mdseries\Large} 
-\subsectionfont{\rmfamily\mdseries\scshape\large} 
-\subsubsectionfont{\rmfamily\bfseries\upshape\large} 
-% \sectionfont{\rmfamily\mdseries\Large} 
-% \subsectionfont{\rmfamily\mdseries\scshape\normalsize} 
-% \subsubsectionfont{\rmfamily\bfseries\upshape\normalsize} 
+\usepackage{sectsty}
+\usepackage[normalem]{ulem}
+\sectionfont{\rmfamily\mdseries\Large}
+\subsectionfont{\rmfamily\mdseries\scshape\large}
+\subsubsectionfont{\rmfamily\bfseries\upshape\large}
+% \sectionfont{\rmfamily\mdseries\Large}
+% \subsectionfont{\rmfamily\mdseries\scshape\normalsize}
+% \subsubsectionfont{\rmfamily\bfseries\upshape\normalsize}
 
 % Set figure legends and captions to be smaller sized sans serif font
 \usepackage[font={footnotesize,sf}]{caption}
@@ -90,7 +90,7 @@
 \newcolumntype{x}[1]{%
 >{\centering\arraybackslash}m{#1}}%
 
-% Allow for long captions and float captions on opposite page of figures 
+% Allow for long captions and float captions on opposite page of figures
 % \usepackage[rightFloats, CaptionBefore]{fltpage}
 
 % Don't let floats cross subsections

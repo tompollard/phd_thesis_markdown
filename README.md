@@ -1,10 +1,10 @@
-# Template for writing a PhD thesis in Markdown
+# Template for writing a PhD thesis in Markdown [![Build Status](https://travis-ci.org/tompollard/phd_thesis_markdown.svg?branch=master)](https://travis-ci.org/tompollard/phd_thesis_markdown)
 
 This repository provides a framework for writing a PhD thesis in Markdown. I used the template for my PhD submission to University College London (UCL), but it should be straightforward to adapt suit other universities too.
 
 ## Why write my thesis in Markdown?
 
-Markdown is a super-friendly plain text format that can be easily converted to a bunch of other formats like PDF, Word and Latex. You'll enjoy working in Markdown because: 
+Markdown is a super-friendly plain text format that can be easily converted to a bunch of other formats like PDF, Word and Latex. You'll enjoy working in Markdown because:
 - it is a clean, plain-text format...
 - ...but you can use Latex when you need it (for example, in laying out mathematical formula).
 - it doesn't suffer from the freezes and crashes that some of us experience when working with large, image-heavy Word documents.
@@ -37,10 +37,10 @@ There are some minor annoyances:
     - A text editor, like [Sublime](https://www.sublimetext.com/), which is what you'll use write the thesis.  
     - Latex, needed for things like styling.  
     - [Pandoc](http://johnmacfarlane.net/pandoc), for converting the Markdown to other formats.  
-    - Git, for version control. 
+    - Git, for version control.
 2. [Fork the repository](https://github.com/tompollard/phd_thesis_markdown/fork) on Github  
 3. Clone the repository onto your local computer (or [download the Zip file](https://github.com/tompollard/phd_thesis_markdown/archive/master.zip)).  
-4. Navigate to the directory that contains the Makefile and type "make pdf" (or "make html") at the command line to update the PDF (or HTML) in the output directory. 
+4. Navigate to the directory that contains the Makefile and type "make pdf" (or "make html") at the command line to update the PDF (or HTML) in the output directory.
 5. Edit the files in the 'source' directory, then goto step 4.  
 
 ## What else do I need to know?
@@ -61,5 +61,3 @@ Contributions to the template are encouraged! There are lots of things that coul
 - improving the style of Word and Tex outputs.
 
 Please fork and edit the project, then send a pull request.
-
-
