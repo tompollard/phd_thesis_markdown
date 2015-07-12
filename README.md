@@ -35,7 +35,7 @@ There are some minor annoyances:
 
 1. Install the following software:
     - A text editor, like [Sublime](https://www.sublimetext.com/), which is what you'll use write the thesis.  
-    - A LaTex distribution (for example, [MacTex](https://tug.org/mactex/ for Mac users).
+    - A LaTex distribution (for example, [MacTex](https://tug.org/mactex/ for Mac users)).
     - [Pandoc](http://johnmacfarlane.net/pandoc), for converting the Markdown to the output format of your choice.  You may also need to install [Pandoc cite-proc](http://pandoc.org/demo/example19/Extension-citations.html) to create the bibliography.
     - Git, for version control.
 2. [Fork the repository](https://github.com/tompollard/phd_thesis_markdown/fork) on Github  
