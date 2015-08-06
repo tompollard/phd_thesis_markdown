@@ -2,7 +2,8 @@
   "name": "MarkdownThesis",
   "version": "1.0.0",
   "scripts": {
-    "watch": "grunt watch"
+    "watch": "grunt watch",
+    "livereload": "grunt server -type html"
   },
   "dependencies": {
     "grunt-cli": "^0.1.13",
@@ -10,5 +11,9 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-make": "^1.0.0",
     "grunt-notify": "^0.4.1"
+  },
+  "devDependencies": {
+    "grunt-express": "^1.4.1",
+    "grunt-open": "^0.2.3"
   }
 }
