@@ -1,0 +1,19 @@
+[{
+  "id": "cousteau:1963living",
+  "type": "book",
+  "title": "The living sea",
+  "publisher": "Hamilton",
+  "publisher-place": "London",
+  "number-of-pages": "212",
+  "event-place": "London",
+  "call-number": "QH91 .C628",
+  "author": [{
+    "family": "Cousteau",
+    "given": "Jacques"
+  }],
+  "issued": {
+    "date-parts": [
+      ["1963"]
+    ]
+  }
+}]

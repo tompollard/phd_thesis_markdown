@@ -7,7 +7,7 @@ OUTPUTDIR=$(BASEDIR)/output
 TEMPLATEDIR=$(INPUTDIR)/templates
 STYLEDIR=$(BASEDIR)/style
 
-BIBFILE=$(INPUTDIR)/references.bib
+BIBFILE=$(INPUTDIR)/references.json
 
 help:
 	@echo ' 																	  '
@@ -21,7 +21,7 @@ help:
 	@echo '                                                                       '
 	@echo ' 																	  '
 	@echo ' 																	  '
-	@echo 'get local templates with: pandoc -D latex/html/etc	  				  '
+	@echo 'get local templates with: pandoc -D latex [or html, etc.]	  				  '
 	@echo 'or generic ones from: https://github.com/jgm/pandoc-templates		  '
 
 pdf:

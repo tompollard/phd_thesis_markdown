@@ -11,7 +11,7 @@ env.template_dir = "templates"
 env.style_dir = "style"
 
 # files
-env.bib_file = env.input_dir + "\\references.bib"
+env.json_file = env.input_dir + "\\references.json"
 env.input_files = " ".join(glob.glob(env.input_dir + "\\*.md"))  # get list of files in source directory and delimit them with spaces
 env.output_file = env.output_dir + "\\thesis"
 env.preamble_file = env.style_dir + "\\preamble.tex"
