@@ -47,7 +47,7 @@ pdf:
 
 tex:
 	pandoc "$(INPUTDIR)"/*.md \
-	-o "$(OUTPUTDIR)/thesis.pdf" \
+	-o "$(OUTPUTDIR)/thesis.tex" \
 	--template="$(STYLEDIR)/template.tex" \
 	--bibliography="$(BIBFILE)" 2>pandoc.log \
 	--csl="$(STYLEDIR)/ref_format.csl" \

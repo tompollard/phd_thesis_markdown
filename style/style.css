@@ -1,139 +1,139 @@
 <style>
 body {
-  font-family: Georgia, Times, Times New Roman, serif;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 30px;
-  font-size: 18px;
-  padding-left: 350px;
-  padding-right: 50px;
-  color: #111;
+    font-family: Georgia, Times, Times New Roman, serif;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 30px;
+    font-size: 18px;
+    padding-left: 350px;
+    padding-right: 50px;
+    color: #111;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 h1 {
-  padding-top: 200px;
-  line-height: 50px;
+    padding-top: 200px;
+    line-height: 50px;
 }
 h2 {
-  padding-top: 30px;
+    padding-top: 30px;
 }
 h3 {
-  padding-top: 20px;
+    padding-top: 20px;
 }
 h4 {
-  padding-top: 10px;
+    padding-top: 10px;
 }
 p {
-  text-align: justify;
+    text-align: justify;
 }
 code {
-  word-wrap: break-word;
+    word-wrap: break-word;
 }
 blockquote {
-  border-left: 3px solid #eee;
-  margin-left: 20px;
-  padding-left: 20px;
+    border-left: 3px solid #eee;
+    margin-left: 20px;
+    padding-left: 20px;
 }
 
 table {
-  width: 100%;
+    width: 100%;
 }
 table caption {
-  font-weight: bold;
+    font-weight: bold;
 }
 table tr {
-  padding: 0;
-  margin: 0;
-  background-color: #f0f0f0;
+    padding: 0;
+    margin: 0;
+    background-color: #f0f0f0;
 }
 table .even {
-  background-color: #fafafa;
+    background-color: #fafafa;
 }
 table td {
-  margin: 0;
-  padding: 3px 5px;
+    margin: 0;
+    padding: 3px 5px;
 }
 
 p .added {
-  color: green;
-  background-color: #FFF3C5;
+    color: green;
+    background-color: #FFF3C5;
 }
 p .removed {
-  color: red;
-  background-color: #FFF3C5;
+    color: red;
+    background-color: #FFF3C5;
 }
 
 header {
-  padding: 80px 0;
+    padding: 80px 0;
 }
 
 nav {
-  position: fixed;
-  left: 0;
-  top: 0;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling:touch;
-  height: 100%;
-  background: #fafafa;
-  max-width: 300px;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  line-height: 30px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling:touch;
+    height: 100%;
+    background: #fafafa;
+    max-width: 300px;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 30px;
 }
 nav::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 nav::-webkit-scrollbar-track {
-  background-color: #ECECEC;
+    background-color: #ECECEC;
 }
 nav::-webkit-scrollbar-thumb {
-  background-color: #B0B0B0;
-  border-radius: 8px;
+    background-color: #B0B0B0;
+    border-radius: 8px;
 }
 nav > ul {
-  padding-right: 10px;
+    padding-right: 10px;
 }
 nav ul {
-  list-style: none;
-  padding-left: 20px;
+    list-style: none;
+    padding-left: 20px;
 }
 nav ul li a {
-  text-decoration: none;
-  color: #364149;
-  display: block;
+    text-decoration: none;
+    color: #364149;
+    display: block;
 }
 nav ul li a:hover {
-  color: #008cff;
+    color: #008cff;
 }
 
 figure {
-  text-align: center;
+    text-align: center;
 }
 figure p {
-  text-align: center;
-  font-style: italic;
+    text-align: center;
+    font-style: italic;
 }
 figure img {
-  width: 100%;
+    width: 100%;
 }
 
 .references {
-  padding-left: 1em;
-  text-indent: -1em;
+    padding-left: 1em;
+    text-indent: -1em;
 }
 
 .references p, .footnotes p {
-  text-align: left;
+    text-align: left;
 }
 
 sup, sub {
-  vertical-align: baseline;
-  position: relative;
-  top: -0.4em;
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
 }
 
 sub { top: 0.4em; }

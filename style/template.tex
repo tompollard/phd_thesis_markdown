@@ -53,6 +53,8 @@ $endif$
 $if(geometry)$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$
+\makeatletter
+\@ifpackageloaded{hyperref}{}{%
 \ifxetex
   \usepackage[setpagesize=false, % page size defined by xetex
               unicode=false, % unicode breaks when used with xetex
@@ -60,7 +62,13 @@ $endif$
 \else
   \usepackage[unicode=true]{hyperref}
 \fi
-\usepackage[usenames,dvipsnames]{color}
+}
+\@ifpackageloaded{color}{
+    \PassOptionsToPackage{usenames,dvipsnames}{color}
+}{%
+    \usepackage[usenames,dvipsnames]{color}
+}
+\makeatother
 \hypersetup{breaklinks=true,
             bookmarks=true,
             pdfauthor={$author-meta$},
@@ -161,8 +169,12 @@ $endfor$
 \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
 
-% Following package is used to add background image to front page
-\usepackage{wallpaper}
+% Uncomment the following line if 'too many unprocessed floats' error occurs, to allow more than the default 18 floats (requires LaTeX 2015 or later)
+% \extrafloats{25}
+
+\flushbottom % Make each page fill up the entire page.
+
+\usepackage{wallpaper} % Add background image to front page
 
 \begin{document}
 
