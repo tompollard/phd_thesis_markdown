@@ -4,17 +4,6 @@ $if(fontfamily)$
 $else$
 \usepackage{lmodern}
 $endif$
-
-% fix for pandoc 1.14
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-% TP: hack to truncate list of figures/tables.
-\usepackage{truncate}
-\usepackage{caption}
-\usepackage{tocloft}
-% TP: end hack
-
 $if(linestretch)$
 \usepackage{setspace}
 \setstretch{$linestretch$}
@@ -49,6 +38,10 @@ $endif$
 $if(mathfont)$
     \setmathfont(Digits,Latin,Greek){$mathfont$}
 $endif$
+$if(CJKmainfont)$
+    \usepackage{xeCJK}
+    \setCJKmainfont[$CJKoptions$]{$CJKmainfont$}
+$endif$
 \fi
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -60,15 +53,42 @@ $endif$
 $if(geometry)$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\usepackage[usenames,dvipsnames]{color}
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={$author-meta$},
+            pdftitle={$title-meta$},
+            colorlinks=true,
+            citecolor=$if(citecolor)$$citecolor$$else$blue$endif$,
+            urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
+            linkcolor=$if(linkcolor)$$linkcolor$$else$magenta$endif$,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+$if(lang)$
+\ifxetex
+  \usepackage{polyglossia}
+  \setmainlanguage{$mainlang$}
+  \setotherlanguages{$for(otherlang)$$otherlang$$sep$,$endfor$}
+\else
+  \usepackage[shorthands=off,$lang$]{babel}
+\fi
+$endif$
 $if(natbib)$
 \usepackage{natbib}
 \bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
 $endif$
 $if(biblatex)$
 \usepackage{biblatex}
-$if(biblio-files)$
-\bibliography{$biblio-files$}
-$endif$
+$for(bibliography)$
+\addbibresource{$bibliography$}
+$endfor$
 $endif$
 $if(listings)$
 \usepackage{listings}
@@ -81,12 +101,13 @@ $highlighting-macros$
 $endif$
 $if(verbatim-in-note)$
 \usepackage{fancyvrb}
+\VerbatimFootnotes
 $endif$
 $if(tables)$
 \usepackage{longtable,booktabs}
 $endif$
 $if(graphics)$
-\usepackage{graphicx}
+\usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -96,23 +117,6 @@ $if(graphics)$
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 $endif$
-\ifxetex
-  \usepackage[setpagesize=false, % page size defined by xetex
-              unicode=false, % unicode breaks when used with xetex
-              xetex]{hyperref}
-\else
-  \usepackage[unicode=true]{hyperref}
-\fi
-\hypersetup{breaklinks=true,
-            bookmarks=true,
-            pdfauthor={$author-meta$},
-            pdftitle={$title-meta$},
-            colorlinks=true,
-            citecolor=$if(citecolor)$$citecolor$$else$blue$endif$,
-            urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
-            linkcolor=$if(linkcolor)$$linkcolor$$else$magenta$endif$,
-            pdfborder={0 0 0}}
-\urlstyle{same}  % don't use monospace font for urls
 $if(links-as-notes)$
 % Make links footnotes instead of hotlinks:
 \renewcommand{\href}[2]{#2\footnote{\url{#1}}}
@@ -125,6 +129,8 @@ $endif$
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt plus 2pt minus 1pt}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 $if(numbersections)$
 \setcounter{secnumdepth}{5}
 $else$
@@ -132,14 +138,6 @@ $else$
 $endif$
 $if(verbatim-in-note)$
 \VerbatimFootnotes % allows verbatim text in footnotes
-$endif$
-$if(lang)$
-\ifxetex
-  \usepackage{polyglossia}
-  \setmainlanguage{$mainlang$}
-\else
-  \usepackage[$lang$]{babel}
-\fi
 $endif$
 
 $if(title)$
@@ -153,10 +151,68 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% Following package is used to add background image to front page
+\usepackage{wallpaper}
+
 \begin{document}
+
 $if(title)$
-\maketitle
+\begin{titlepage}
+
+    % Delete the following line
+    % to remove the UCL header logo
+    \ThisULCornerWallPaper{1.0}{style/univ_logo.eps}
+
+    \begin{center}
+
+      \vspace*{2.5cm}
+
+        \huge
+        $title$
+
+        \vspace{1.5cm}
+
+        \Large
+        $author$
+
+        \vspace{1.5cm}
+
+        \normalsize
+        A thesis presented for the degree of\\
+        $degree$
+
+        \vfill
+
+        \normalsize
+        Supervised by:\\
+        $for(supervisors)$$supervisors$$sep$\\$endfor$
+
+        \vspace{0.8cm}
+
+        % Uncomment the following line
+        % to add a centred university logo
+        % \includegraphics[width=0.4\textwidth]{style/univ_logo.eps}
+
+        \normalsize
+        $institution$\\
+        $date$
+
+        % Copyright $date$ $author$. Except where otherwise noted, content in this thesis is licensed under a Creative Commons Attribution 4.0 Licence (http://creativecommons.org/licences/by/4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.
+
+    \end{center}
+\end{titlepage}
 $endif$
+
 $if(abstract)$
 \begin{abstract}
 $abstract$
@@ -169,7 +225,7 @@ $include-before$
 $endfor$
 $if(toc)$
 {
-\hypersetup{linkcolor=black}
+\hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
 \setcounter{tocdepth}{$toc-depth$}
 \tableofcontents
 }
@@ -183,7 +239,7 @@ $endif$
 $body$
 
 $if(natbib)$
-$if(biblio-files)$
+$if(bibliography)$
 $if(biblio-title)$
 $if(book-class)$
 \renewcommand\bibname{$biblio-title$}
@@ -191,7 +247,7 @@ $else$
 \renewcommand\refname{$biblio-title$}
 $endif$
 $endif$
-\bibliography{$biblio-files$}
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
 
 $endif$
 $endif$
