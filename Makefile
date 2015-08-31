@@ -77,14 +77,18 @@ docx:
 
 html:
 	pandoc "$(INPUTDIR)"/*.md \
+	-t html5 \
 	-o "$(OUTPUTDIR)/thesis.html" \
-	--standalone \
 	--template="$(STYLEDIR)/template.html" \
-	--bibliography="$(BIBFILE)" \
+	--bibliography="$(BIBFILE)" 2>pandoc.log \
 	--csl="$(STYLEDIR)/ref_format.csl" \
+	-V link-citations \
 	--include-in-header="$(STYLEDIR)/style.css" \
-	--toc \
-	--number-sections
+	--table-of-contents \
+	--number-sections \
+	--section-divs \
+	--smart \
+	--standalone
 	rm -rf "$(OUTPUTDIR)/source"
 	mkdir "$(OUTPUTDIR)/source"
 	cp -r "$(INPUTDIR)/figures" "$(OUTPUTDIR)/source/figures"
