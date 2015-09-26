@@ -9,6 +9,8 @@ STYLEDIR=$(BASEDIR)/style
 
 BIBFILE=$(INPUTDIR)/references.json
 
+all: pdf html
+
 help:
 	@echo ' 																	  '
 	@echo 'Makefile for the Markdown thesis                                       '
