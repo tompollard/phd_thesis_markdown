@@ -45,15 +45,15 @@ table {
 table caption {
     font-weight: bold;
 }
-table tr {
+tr {
     padding: 0;
     margin: 0;
     background-color: #f0f0f0;
 }
-table .even {
+.even {
     background-color: #fafafa;
 }
-table td {
+td {
     margin: 0;
     padding: 3px 5px;
 }
@@ -121,7 +121,7 @@ figure img {
     width: 100%;
 }
 
-.references {
+.references p {
     padding-left: 1em;
     text-indent: -1em;
 }
