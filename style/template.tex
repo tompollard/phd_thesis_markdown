@@ -12,7 +12,7 @@ $endif$
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[T1]{fontenc}
+  \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
   \usepackage[utf8]{inputenc}
 $if(euro)$
   \usepackage{eurosym}
@@ -23,7 +23,7 @@ $endif$
   \else
     \usepackage{fontspec}
   \fi
-  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
   \newcommand{\euro}{€}
 $if(mainfont)$
     \setmainfont[$mainfontoptions$]{$mainfont$}
@@ -52,40 +52,29 @@ $endif$
 $if(geometry)$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$
-\makeatletter
-\@ifpackageloaded{hyperref}{}{%
-\ifxetex
-  \usepackage[setpagesize=false, % page size defined by xetex
-              unicode=false, % unicode breaks when used with xetex
-              xetex]{hyperref}
-\else
-  \usepackage[unicode=true]{hyperref}
-\fi
-}
-\@ifpackageloaded{color}{
-    \PassOptionsToPackage{usenames,dvipsnames}{color}
-}{%
-    \usepackage[usenames,dvipsnames]{color}
-}
-\makeatother
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{hyperref}
 \hypersetup{breaklinks=true,
-            bookmarks=true,
+            unicode=true,
             pdfauthor={$author-meta$},
             pdftitle={$title-meta$},
             colorlinks=true,
             citecolor=$if(citecolor)$$citecolor$$else$blue$endif$,
             urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
             linkcolor=$if(linkcolor)$$linkcolor$$else$magenta$endif$,
-            pdfborder={0 0 0}}
+            pdfborder={0 0 0}$if(hidelinks)$,
+            hidelinks$endif$}
 \urlstyle{same}  % don't use monospace font for urls
 $if(lang)$
-\ifxetex
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[shorthands=off,$for(babel-otherlangs)$$babel-otherlangs$$sep$,$endfor$,$babel-lang$]{babel}
+  $babel-newcommands$
+\else
   \usepackage{polyglossia}
+  \setmainlanguage[$polyglossia-lang.options$]{$polyglossia-lang.name$}
 $for(polyglossia-otherlangs)$
   \setotherlanguage[$polyglossia-otherlangs.options$]{$polyglossia-otherlangs.name$}
 $endfor$
-\else
-  \usepackage[shorthands=off,$babel-lang$]{babel}
 \fi
 $endif$
 $if(natbib)$
@@ -109,7 +98,7 @@ $highlighting-macros$
 $endif$
 $if(verbatim-in-note)$
 \usepackage{fancyvrb}
-\VerbatimFootnotes
+\VerbatimFootnotes % allows verbatim text in footnotes
 $endif$
 $if(tables)$
 \usepackage{longtable,booktabs}
@@ -134,8 +123,11 @@ $if(strikeout)$
 % avoid problems with \sout in headers with hyperref:
 \pdfstringdefDisableCommands{\renewcommand{\sout}{}}
 $endif$
-% \setlength{\parindent}{0pt}
-% \setlength{\parskip}{6pt plus 2pt minus 1pt}
+$if(indent)$
+$else$
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+$endif$
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -143,9 +135,6 @@ $if(numbersections)$
 \setcounter{secnumdepth}{5}
 $else$
 \setcounter{secnumdepth}{0}
-$endif$
-$if(verbatim-in-note)$
-\VerbatimFootnotes % allows verbatim text in footnotes
 $endif$
 $if(dir)$
 \ifxetex
@@ -172,10 +161,15 @@ $if(author)$
 \author{$for(author)$$author$$sep$ \and $endfor$}
 $endif$
 \date{$date$}
+
+\flushbottom % Make each page fill up the entire page.
+
 $for(header-includes)$
 $header-includes$
 $endfor$
 
+$if(subparagraph)$
+$else$
 % Redefines (sub)paragraphs to behave more like sections
 \ifx\paragraph\undefined\else
 \let\oldparagraph\paragraph
@@ -185,19 +179,12 @@ $endfor$
 \let\oldsubparagraph\subparagraph
 \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
-
-\flushbottom % Make each page fill up the entire page.
-
-\usepackage{wallpaper} % Add background image to front page
+$endif$
 
 \begin{document}
 
 $if(title)$
 \begin{titlepage}
-
-    % Delete the following line
-    % to remove the UCL header logo
-    \ThisULCornerWallPaper{1.0}{style/univ_logo.eps}
 
     \begin{center}
 
