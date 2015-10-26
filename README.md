@@ -28,7 +28,7 @@ There are some minor annoyances:
 - License.md => terms of reuse (MIT license).
 - Makefile => contains instructions for using Pandoc to produce the final thesis.
 - output/ => directory to hold the final version.
-- source/ => directory to hold the thesis content. Includes the references.bib file.
+- source/ => directory to hold the thesis content. Includes the references.json file.
 - source/figures/ => directory to hold the figures.
 - style/ => directory to hold the style documents.
 

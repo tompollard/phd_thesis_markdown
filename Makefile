@@ -7,7 +7,9 @@ OUTPUTDIR=$(BASEDIR)/output
 TEMPLATEDIR=$(INPUTDIR)/templates
 STYLEDIR=$(BASEDIR)/style
 
-BIBFILE=$(INPUTDIR)/references.bib
+BIBFILE=$(INPUTDIR)/references.json
+
+all: pdf html
 
 help:
 	@echo ' 																	  '
@@ -21,51 +23,74 @@ help:
 	@echo '                                                                       '
 	@echo ' 																	  '
 	@echo ' 																	  '
-	@echo 'get local templates with: pandoc -D latex/html/etc	  				  '
+	@echo 'get local templates with: pandoc -D latex [or html, etc.]	  				  '
 	@echo 'or generic ones from: https://github.com/jgm/pandoc-templates		  '
 
 pdf:
 	pandoc "$(INPUTDIR)"/*.md \
 	-o "$(OUTPUTDIR)/thesis.pdf" \
-	-H "$(STYLEDIR)/preamble.tex" \
 	--template="$(STYLEDIR)/template.tex" \
 	--bibliography="$(BIBFILE)" 2>pandoc.log \
 	--csl="$(STYLEDIR)/ref_format.csl" \
-	-V fontsize=12pt \
+	-V documentclass=report \
 	-V papersize=a4paper \
-	-V documentclass:report \
-	-N \
-	--latex-engine=xelatex
+	-V geometry="top=1.5in,bottom=1.5in,left=1.5in,right=1.5in" \
+	-V fontsize=12pt \
+	-V citecolor=black \
+	-V toccolor=black \
+	-V urlcolor=black \
+	-V linkcolor=black \
+	-V lang=english \
+	--number-sections \
+	--chapters \
+	--latex-engine=xelatex \
+	--smart \
+	--standalone
 
 tex:
 	pandoc "$(INPUTDIR)"/*.md \
 	-o "$(OUTPUTDIR)/thesis.tex" \
-	-H "$(STYLEDIR)/preamble.tex" \
-	--bibliography="$(BIBFILE)" \
-	-V fontsize=12pt \
-	-V papersize=a4paper \
-	-V documentclass:report \
-	-N \
+	--template="$(STYLEDIR)/template.tex" \
+	--bibliography="$(BIBFILE)" 2>pandoc.log \
 	--csl="$(STYLEDIR)/ref_format.csl" \
-	--latex-engine=xelatex
+	-V documentclass=report \
+	-V papersize=a4paper \
+	-V geometry="top=1.5in,bottom=1.5in,left=1.5in,right=1.5in" \
+	-V fontsize=12pt \
+	-V citecolor=black \
+	-V toccolor=black \
+	-V urlcolor=black \
+	-V linkcolor=black \
+	-V lang=english \
+	--number-sections \
+	--chapters \
+	--latex-engine=xelatex \
+	--smart \
+	--standalone
 
 docx:
 	pandoc "$(INPUTDIR)"/*.md \
 	-o "$(OUTPUTDIR)/thesis.docx" \
 	--bibliography="$(BIBFILE)" \
 	--csl="$(STYLEDIR)/ref_format.csl" \
-	--toc
+	--table-of-contents \
+	--smart \
+	--standalone
 
 html:
 	pandoc "$(INPUTDIR)"/*.md \
+	-t html5 \
 	-o "$(OUTPUTDIR)/thesis.html" \
-	--standalone \
 	--template="$(STYLEDIR)/template.html" \
-	--bibliography="$(BIBFILE)" \
+	--bibliography="$(BIBFILE)" 2>pandoc.log \
 	--csl="$(STYLEDIR)/ref_format.csl" \
+	-V link-citations \
 	--include-in-header="$(STYLEDIR)/style.css" \
-	--toc \
-	--number-sections
+	--table-of-contents \
+	--number-sections \
+	--section-divs \
+	--smart \
+	--standalone
 	rm -rf "$(OUTPUTDIR)/source"
 	mkdir "$(OUTPUTDIR)/source"
 	cp -r "$(INPUTDIR)/figures" "$(OUTPUTDIR)/source/figures"

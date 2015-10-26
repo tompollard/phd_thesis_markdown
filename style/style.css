@@ -1,6 +1,6 @@
 <style>
 body {
-    font-family: Georgia;
+    font-family: Georgia, Times, Times New Roman, serif;
     max-width: 800px;
     margin: 0 auto;
     line-height: 30px;
@@ -11,7 +11,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: Arial;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -30,10 +30,6 @@ h4 {
 p {
     text-align: justify;
 }
-p a {
-    word-wrap: break-word;
-    white-space: pre;
-}
 code {
     word-wrap: break-word;
 }
@@ -43,91 +39,102 @@ blockquote {
     padding-left: 20px;
 }
 
-::selection {
-    background-color: #E4E4E4;
-}
-
 table {
     width: 100%;
 }
 table caption {
     font-weight: bold;
 }
-table tr {
+tr {
     padding: 0;
     margin: 0;
     background-color: #f0f0f0;
 }
-table tr.even {
+.even {
     background-color: #fafafa;
 }
-table td {
+td {
     margin: 0;
     padding: 3px 5px;
 }
 
-p span.added {
+p .added {
     color: green;
     background-color: #FFF3C5;
 }
-p span.removed {
+p .removed {
     color: red;
     background-color: #FFF3C5;
 }
 
-#title-page {
+header {
     padding: 80px 0;
 }
 
-#TOC {
+nav {
     position: fixed;
     left: 0;
     top: 0;
     overflow-y: scroll;
+    -webkit-overflow-scrolling:touch;
     height: 100%;
     background: #fafafa;
     max-width: 300px;
-    font-family: Arial;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 15px;
     line-height: 30px;
 }
-::-webkit-scrollbar {
+nav::-webkit-scrollbar {
     width: 8px;
 }
-::-webkit-scrollbar-track {
+nav::-webkit-scrollbar-track {
     background-color: #ECECEC;
 }
-::-webkit-scrollbar-thumb {
+nav::-webkit-scrollbar-thumb {
     background-color: #B0B0B0;
     border-radius: 8px;
 }
-#TOC > ul {
+nav > ul {
     padding-right: 10px;
 }
-#TOC ul {
+nav ul {
     list-style: none;
     padding-left: 20px;
 }
-#TOC ul li a {
+nav ul li a {
     text-decoration: none;
     color: #364149;
-    text-overflow: ellipsis;
     display: block;
-    white-space: nowrap;
-    overflow: hidden;
 }
-#TOC ul li a:hover {
+nav ul li a:hover {
     color: #008cff;
 }
 
-.figure {
+figure {
     text-align: center;
 }
-.figure p {
+figure p {
     text-align: center;
     font-style: italic;
 }
-.figure img {
-      width: 100%;
+figure img {
+    width: 100%;
 }
+
+.references p {
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+.references p, .footnotes p {
+    text-align: left;
+}
+
+sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+}
+
+sub { top: 0.4em; }
 </style>
