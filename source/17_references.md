@@ -1,3 +1,5 @@
+\footnotesize
+
 <!-- 
 Do not edit this page.
 
