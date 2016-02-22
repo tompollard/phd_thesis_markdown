@@ -1,24 +1,12 @@
-# Documentation platform
+# First research study
 
-### Documentation platform
+## Introduction
 
-The platform \ref{platform_model} is composed of three main components: the client side application, a RESTful API and the database layer.
-
-![Platf \label{platform_model}](source/figures/platform_model.jpg)   
-
-\newpage
-
-#### Client side application
-
-A client side application lets you decouple the presentation of data and business logic from the server to the client. It is responsible for displaying the user interface, handling user input and retrieving data from the RESTful API.
+This is the introduction. Nam mollis congue tortor, sit amet convallis tortor mollis eget. Fusce viverra ut magna eu sagittis. Vestibulum at ultrices sapien, at elementum urna. Nam a blandit leo, non lobortis quam. Aliquam feugiat turpis vitae tincidunt ultricies. Mauris ullamcorper pellentesque nisl, vel molestie lorem viverra at.
 
 ## Method
 
 Suspendisse iaculis in lacus ut dignissim. Cras dignissim dictum eleifend. Suspendisse potenti. Suspendisse et nisi suscipit, vestibulum est at, maximus sapien. Sed ut diam tortor.
-
-## JPG FIGURE
-
-![RV Calypso is a former British Royal Navy minesweeper converted into a research vessel for the oceanographic researcher Jacques-Yves Cousteau. It was equipped with a mobile laboratory for underwater field research. \label{ref_a_figure}](source/figures/example_figure.jpg)
 
 ### Subsection 1
 
