@@ -12,7 +12,7 @@ This is the introduction. Duis in neque felis. In hac habitasse platea dictumst.
 
 ## The middle
 
-This is the literature review. Nullam quam odio, volutpat ac ornare quis, vestibulum nec nulla. Aenean nec dapibus neque. Mathematical formula can be inserted using Latex:
+This is the literature review. Nullam quam odio, volutpat ac ornare quis, vestibulum nec nulla. Aenean nec dapibus in mL/min^-1^. Mathematical formula can be inserted using Latex:
 
 (@ref_for_eqn1) $f(x) = ax^3 + bx^2 + cx + d$
 
