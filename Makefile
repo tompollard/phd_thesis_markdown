@@ -37,7 +37,6 @@ pdf:
 	-V documentclass:report \
 	-N \
 	--latex-engine=xelatex \
-	--verbose
 
 tex:
 	pandoc "$(INPUTDIR)"/*.md \
