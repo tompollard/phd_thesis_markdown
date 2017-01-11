@@ -25,6 +25,7 @@ before_install:
   - sudo apt-get install texlive-science
   # Install fonts
   - sudo apt-get install lmodern
+  - sudo pip install pandoc-shortcaption
 
 # Attempt to create a PDF
 script:
