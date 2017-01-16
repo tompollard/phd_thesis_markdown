@@ -81,7 +81,7 @@ Some useful points, in a random order:
 # Contributing
 
 Contributions to the template are encouraged! There are lots of things that could improved, like:
-- finding a way to add short captions for the figures and tables, so that the lists of figures and tables can be automatically generated.
+- finding a way to add short captions for the tables, so that the lists of tables can be automatically generated.
 - cleaning up the Latex templates, which are messy at the moment.
 - improving the style of Word and Tex outputs.
 
