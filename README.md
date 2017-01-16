@@ -26,8 +26,8 @@ Markdown is a super-friendly plain text format that can be easily converted to a
 There are some minor annoyances:
 - if you haven't worked with Markdown before then you'll find yourself referring to the style-guide fairly often at first.
 - it isn't possible to add a short caption to tables ~~and figures~~~([figures are now fixed](https://github.com/tompollard/phd_thesis_markdown/pull/47), thanks to @martisak). This means that /listoftables ~~and /listoffigures~~ includes the long-caption, which probably isn't what you want. If you want to include the list of tables ~~and list of figures~~, then you'll need to write it manually.
-- the style documents in this framework could be improved. The PDF and HTML (thanks [@ArcoMul](https://github.com/ArcoMul)) outputs are acceptable, but ~~HTML and~~ Word needs work if you plan to output to this format.
-- there is no straightforward way of specifying image size in the markdown right now, though this functionality is coming (see: https://github.com/tompollard/phd_thesis_markdown/issues/15)
+- the style documents in this framework could be improved. The PDF and HTML (thanks [@ArcoMul](https://github.com/ArcoMul)) outputs are acceptable, but ~~HTML and~~ Word needs work if you plan to output to this format.  
+- ~~there is no straightforward way of specifying image size in the markdown right now, though this functionality is coming (see: https://github.com/tompollard/phd_thesis_markdown/issues/15)~~ (Image size can now be specified. Thanks to @rudolfbyker for [highlighting this](https://github.com/tompollard/phd_thesis_markdown/issues/15)).
 - ... if there are more, please add them here.
 
 ## How is the template organised?
