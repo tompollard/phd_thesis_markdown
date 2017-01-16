@@ -37,7 +37,7 @@ pdf:
 	-V papersize=a4paper \
 	-V documentclass:report \
 	-N \
-	--latex-engine=xelatex \
+	--latex-engine=xelatex 
 
 tex:
 	pandoc "$(INPUTDIR)"/*.md \
