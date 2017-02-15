@@ -26,7 +26,6 @@ help:
 
 pdf:
 	pandoc "$(INPUTDIR)"/*.md \
-	--filter pandoc-shortcaption \
 	-o "$(OUTPUTDIR)/thesis.pdf" \
 	-H "$(STYLEDIR)/preamble.tex" \
 	--template="$(STYLEDIR)/template.tex" \
@@ -48,8 +47,8 @@ tex:
 	-V papersize=a4paper \
 	-V documentclass:report \
 	-N \
-	--filter pandoc-shortcaption
-	--csl="$(STYLEDIR)/ref_format.csl"
+	--csl="$(STYLEDIR)/ref_format.csl" \
+	--latex-engine=xelatex
 
 docx:
 	pandoc "$(INPUTDIR)"/*.md \

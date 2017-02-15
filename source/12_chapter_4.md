@@ -36,7 +36,7 @@ For details on setting attributes like width and height, see:
 http://pandoc.org/MANUAL.html#extension-link_attributes
 --> 
 
-![RV Calypso is a former British Royal Navy minesweeper converted into a research vessel for the oceanographic researcher Jacques-Yves Cousteau. It was equipped with a mobile laboratory for underwater field research. \label{ref_a_figure}](source/figures/example_figure.pdf "RV Calypso research vessel"){ width=100% }
+![RV Calypso is a former British Royal Navy minesweeper converted into a research vessel for the oceanographic researcher Jacques-Yves Cousteau. It was equipped with a mobile laboratory for underwater field research. \label{ref_a_figure}](source/figures/example_figure.pdf){ width=100% }
 
 ## Conclusion
 

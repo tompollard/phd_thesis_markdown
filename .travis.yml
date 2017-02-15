@@ -16,7 +16,7 @@ env:
 
 before_install:
   # Fetch pandoc and pandoc-citeproc binaries
-  - wget https://github.com/jgm/pandoc/releases/download/1.17.2/pandoc-1.17.2-1-amd64.deb && ar p pandoc-1.17.2-1-amd64.deb data.tar.gz | tar zx
+  - wget https://github.com/jgm/pandoc/releases/download/1.15.0.5/pandoc-1.15.0.5-1-amd64.deb && ar p pandoc-1.15.0.5-1-amd64.deb data.tar.gz | tar zx
   # Install TeX Live
   - sudo add-apt-repository -y ppa:texlive-backports/ppa
   - sudo apt-get update -qq
@@ -25,7 +25,6 @@ before_install:
   - sudo apt-get install texlive-science
   # Install fonts
   - sudo apt-get install lmodern
-  - sudo pip install pandoc-shortcaption
 
 # Attempt to create a PDF
 script:
