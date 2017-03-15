@@ -12,9 +12,9 @@ If you have used this template in your work, please cite the following publicati
 
 ## Why write my thesis in Markdown?
 
-Markdown is a super-friendly plain text format that can be easily converted to a bunch of other formats like PDF, Word and Latex. You'll enjoy working in Markdown because:
+Markdown is a super-friendly plain text format that can be easily converted to a bunch of other formats like PDF, Word and LaTeX. You'll enjoy working in Markdown because:
 - it is a clean, plain-text format...
-- ...but you can use Latex when you need it (for example, in laying out mathematical formula).
+- ...but you can use LaTeX when you need it (for example, in laying out mathematical formula).
 - it doesn't suffer from the freezes and crashes that some of us experience when working with large, image-heavy Word documents.
 - it automatically handles the table of contents, bibliography etc with Pandoc.
 - comments, drafts of text, etc can be added to the document by wrapping them in &lt;!--  --&gt;
@@ -44,7 +44,7 @@ There are some minor annoyances:
 
 1. Install the following software:
     - A text editor, like [Sublime](https://www.sublimetext.com/), which is what you'll use write the thesis.  
-    - A LaTex distribution (for example, [MacTex](https://tug.org/mactex/) for Mac users).
+    - A LaTeX distribution (for example, [MacTeX](https://tug.org/mactex/) for Mac users).
     - [Pandoc](http://johnmacfarlane.net/pandoc), for converting the Markdown to the output format of your choice.  You may also need to install [Pandoc cite-proc](http://pandoc.org/demo/example19/Extension-citations.html) to create the bibliography.
     - Install @martisak's shortcaption module for Pandoc, with `pip install pandoc-shortcaption`
     - Git, for version control.
@@ -73,16 +73,16 @@ Some useful points, in a random order:
 - each chapter must finish with at least one blank line, otherwise the header of the following chapter may not be picked up.
 - add two spaces at the end of a line to force a line break.
 - the template uses [John Macfarlane's Pandoc](http://johnmacfarlane.net/pandoc/README.html) to generate the output documents. Refer to this page for Markdown formatting guidelines.
-- PDFs are generated using the Latex templates in the style directory. Fonts etc can be changed in the tex templates.
+- PDFs are generated using the LaTeX templates in the style directory. Fonts etc can be changed in the TeX templates.
 - To change the citation style, just overwrite ref_format.csl with the new style. Style files can be obtained from [citationstyles.org/](http://citationstyles.org/)
 - For fellow web developers, there is a Grunt task file (Gruntfile.js) which can be used to 'watch' the markdown files. By running `$ npm install` and then `$ npm run watch` the PDF and HTML export is done automatically when saving a Markdown file.
 - You can automatically reload the HTML page on your browser using LiveReload with the command `$ npm run livereload`. The HTML page will automatically reload when saving a Markdown file after the export is done.
 
 # Contributing
 
-Contributions to the template are encouraged! There are lots of things that could improved, like:
+Contributions to the template are encouraged! There are lots of things that could be improved, like:
 - finding a way to add short captions for the tables, so that the lists of tables can be automatically generated.
-- cleaning up the Latex templates, which are messy at the moment.
-- improving the style of Word and Tex outputs.
+- cleaning up the LaTeX templates, which are messy at the moment.
+- improving the style of Word and TeX outputs.
 
 Please fork and edit the project, then send a pull request.
