@@ -4,11 +4,6 @@ People outside UCL may want to remove the header logo
 and add the centred logo
 -->
 
----
-author: 'Your Name'
-title: 'Your Thesis Title'
-...
-
 \begin{titlepage}
     \begin{center}
 

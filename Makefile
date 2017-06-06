@@ -36,7 +36,7 @@ pdf:
 	-V papersize=a4paper \
 	-V documentclass:report \
 	-N \
-	--latex-engine=xelatex 
+	--latex-engine=xelatex
 
 tex:
 	pandoc "$(INPUTDIR)"/*.md \
@@ -58,7 +58,7 @@ docx:
 	--toc
 
 html:
-	pandoc "$(INPUTDIR)"/*.md \
+	pandoc "%(INPUTDIR)"/metadata.yaml "$(INPUTDIR)"/*.md \
 	-o "$(OUTPUTDIR)/thesis.html" \
 	--standalone \
 	--template="$(STYLEDIR)/template.html" \
