@@ -1,8 +1,13 @@
-<!-- 
-This is the Latex-heavy title page. 
-People outside UCL may want to remove the header logo 
+<!--
+This is the Latex-heavy title page.
+People outside UCL may want to remove the header logo
 and add the centred logo
 -->
+
+---
+author: 'Your Name'
+title: 'Your Thesis Title'
+...
 
 \begin{titlepage}
     \begin{center}
@@ -10,14 +15,14 @@ and add the centred logo
     % Delete the following line
     % to remove the UCL header logo
     \ThisULCornerWallPaper{1.0}{style/univ_logo.eps}
-        
+
         \vspace*{2.5cm}
-        
+
         \huge
         This is the title of the thesis
-        
+
         \vspace{1.5cm}
-        
+
         \Large
         Firstname Surname
 
@@ -26,9 +31,9 @@ and add the centred logo
         \normalsize
         A thesis presented for the degree of\\
         Doctor of Philosophy
-        
+
         \vfill
-        
+
         \normalsize
         Supervised by:\\
         Professor Louis Fage\\
@@ -39,7 +44,7 @@ and add the centred logo
         % Uncomment the following line
         % to add a centered university logo
         % \includegraphics[width=0.4\textwidth]{style/univ_logo.eps}
-        
+
         \normalsize
         University College London, UK\\
         January 2015
