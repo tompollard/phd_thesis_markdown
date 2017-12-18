@@ -1,57 +1,53 @@
-# Template for writing a PhD thesis in Markdown [![Build Status](https://travis-ci.org/tompollard/phd_thesis_markdown.svg?branch=master)](https://travis-ci.org/tompollard/phd_thesis_markdown)  
+# Markdown (Pandoc) Template für Abschlussarbeiten
 
-[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.58490.svg)](http://dx.doi.org/10.5281/zenodo.58490)
+Das Template basiert auf auf dem Repository [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.58490.svg)](http://dx.doi.org/10.5281/zenodo.58490) von Tom Pollard et al:
 
-This repository provides a framework for writing a PhD thesis in Markdown. I used the template for my PhD submission to University College London (UCL), but it should be straightforward to adapt suit other universities too.
+> This repository provides a framework for writing a PhD thesis in Markdown. I used the template for my PhD submission to University College London (UCL), but it should be straightforward to adapt suit other universities too.
 
-## Citing the template
+Bisher habe ich vor allem mit LaTex gearbeitet. Markdown hat aber eindeutig die schönere und einfachere Syntax. Mit [Pandoc](https://pandoc.org/) lassen sich die Vorteile beider Systeme nutzen. Ich habe die Vorlage für meine Bedürfnissen (Bachelorarbeit an der Hochschule München) angepasst. Ich habe aus der Original-README die folgenden Abschnitte übernommen und sinngemäß übersetzt:
 
-If you have used this template in your work, please cite the following publication:
+## Warum sollte ich meine Abschlussarbeit mit Markdown schreiben?
 
-> Tom Pollard et al. (2016). Template for writing a PhD thesis in Markdown. Zenodo. http://dx.doi.org/10.5281/zenodo.58490
+Markdown ist ein benutzerfreundliches Klartextformat, das einfach in eine Reihe anderer Formate wie PDF, Word und LaTex umgewandelt werden kann. Du wirst die Arbeit mit Markdown lieben, weil:
 
-## Why write my thesis in Markdown?
+- Es handelt sich um ein übersichtliches Klartextformat.
+- Du kannst LaTeX verwenden, wenn du es brauchst (z.B. für Matheformeln).
+- Auch bei großen und bildlastigen Dokumenten lässt es dich nicht im Stich.
+- automatische Verzeichnisse (Inhalt, Abbildungen, Tabellen, Literatur, ...) sind Dank Pandoc kein Problem.
+- Kommentare, Textentwürfe etc. können innerhalb des Dokuments gespeichert werden, indem du sie mit `<!-- Kommentare ... -->` umgibst.
+- Es arbeitet gut mit Git zusammen. Das erleichtert dir Backups. Checke einfach deine Änderungen ein und lade sie in dein Repository.
+- Wenn Markdown doch nichts für dich sein sollte, kannst du einfach die bisherige Arbeit umwandeln und woanders weiterarbeiten.
 
-Markdown is a super-friendly plain text format that can be easily converted to a bunch of other formats like PDF, Word and LaTeX. You'll enjoy working in Markdown because:
-- it is a clean, plain-text format...
-- ...but you can use LaTeX when you need it (for example, in laying out mathematical formula).
-- it doesn't suffer from the freezes and crashes that some of us experience when working with large, image-heavy Word documents.
-- it automatically handles the table of contents, bibliography etc with Pandoc.
-- comments, drafts of text, etc can be added to the document by wrapping them in &lt;!--  --&gt;
-- it works well with Git, so keeping backups is straightforward. Just commit the changes and then push them to your repository.
-- there is no lock-in. If you decide that Markdown isn't for you, then just output to Word, or whatever, and continue working in the new format.
+## Gibt es irgendwelche Gründe nicht mit Markdown zu arbeiten?
 
-## Are there any reasons not to use Markdown?
+Es gibt ein paar kleine Probleme:
 
-There are some minor annoyances:
-- if you haven't worked with Markdown before then you'll find yourself referring to the style-guide fairly often at first.
-- it isn't possible to add a short caption to tables ~~and figures~~ ([figures are now fixed](https://github.com/tompollard/phd_thesis_markdown/pull/47), thanks to @martisak). This means that /listoftables includes the long-caption, which probably isn't what you want. If you want to include the list of tables, then you'll need to write it manually.
-- the style documents in this framework could be improved. The PDF and HTML (thanks [@ArcoMul](https://github.com/ArcoMul)) outputs are acceptable, but ~~HTML and~~ Word needs work if you plan to output to this format.  
-- ~~there is no straightforward way of specifying image size in the markdown right now, though this functionality is coming (see: https://github.com/tompollard/phd_thesis_markdown/issues/15)~~ (Image size can now be specified. Thanks to @rudolfbyker for [highlighting this](https://github.com/tompollard/phd_thesis_markdown/issues/15)).
-- ... if there are more, please add them here.
+- Derzeit ist es nicht möglich Kurzbeschriftungen bei Tabellen ~~und Abbildungsverzeichnissen~~ ([bei Abbildungen ist es mittlerweile möglich](https://github.com/tompollard/phd_thesis_markdown/pull/47), Dank an @martisak) zu verwenden. `/listoftables` nutzt lange Beschriftungen. Wenn du das nicht willst, musst du das Tabellenverzeichnis am Ende manuell schreiben.
+- Das Design einiger Ausgabeformate könnte verbessert werden. Die Ausgabe als PDF und HTML (Danke an [@ArcoMul](https://github.com/ArcoMul)) ist ok. Wenn du Worddokumente als Ausgabeformat benötigst, wirst du noch etwas Arbeit haben.
+- Wenn dir weitere Punkte auffallen, kannst du sie hier einfügen.
 
-## How is the template organised?
+## Wie ist die Vorlage strukturiert?
 
-- README.md => these instructions.
-- License.md => terms of reuse (MIT license).
-- Makefile => contains instructions for using Pandoc to produce the final thesis.
-- output/ => directory to hold the final version.
-- source/ => directory to hold the thesis content. Includes the references.bib file.
-- source/figures/ => directory to hold the figures.
-- style/ => directory to hold the style documents.
+- README.md => diese Hinweise.
+- License.md => Regeln für die Verwendung (MIT license).
+- Makefile => enthält Befehle mit denen das Dokument erzeugt wird.
+- output/ => Ordner, der das erzeugte Dokument enthält.
+- source/ => Ordner, der den Inhalt der Abschlussarbeit enthält. Auch die Datei references.bib, die die Literaturhinweise enthält.
+- source/figures/ => Ordner für Abbildungen.
+- style/ => Ordner mit den Styledolumenten.
 
-## How do I get started?
+## Wie fange ich an?
 
-1. Install the following software:
-    - A text editor, like [Sublime](https://www.sublimetext.com/), which is what you'll use write the thesis.  
-    - A LaTeX distribution (for example, [MacTeX](https://tug.org/mactex/) for Mac users).
-    - [Pandoc](http://johnmacfarlane.net/pandoc), for converting the Markdown to the output format of your choice.  You may also need to install [Pandoc cite-proc](http://pandoc.org/demo/example19/Extension-citations.html) to create the bibliography.
-    - Install @martisak's shortcaption module for Pandoc, with `pip install pandoc-shortcaption`
-    - Git, for version control.
-2. [Fork the repository](https://github.com/tompollard/phd_thesis_markdown/fork) on Github  
-3. Clone the repository onto your local computer (or [download the Zip file](https://github.com/tompollard/phd_thesis_markdown/archive/master.zip)).  
-4. Navigate to the directory that contains the Makefile and type "make pdf" (or "make html") at the command line to update the PDF (or HTML) in the output directory.  
-**In case of an error** (e.g. `make: *** [pdf] Error 43`) run the following commands:  
+1. Installiere folgende Software:
+    - Einen Texteditor wie [Atom](https://atom.io/), [Sublime](https://www.sublimetext.com/), emacs, ...
+    - Eine LaTeX Distribution (z.B., [TeX Live](https://www.tug.org/texlive/) für Linux- und Windowsnutzer).
+    - [Pandoc](http://johnmacfarlane.net/pandoc) für die Konvertierung von Markdown in das gewünschte Format. Möglicherweise musst du auch [Pandoc cite-proc](http://pandoc.org/demo/example19/Extension-citations.html) installieren, um das Literaturverzeichnis erstellen zu können.
+    - Installiere @martisak's "shortcaption" Modul für Pandoc mit `pip install pandoc-shortcaption`
+    - Git, für Versionskontrolle
+2. [Forke das Repository](https://github.com/089/phd_thesis_markdown) oder [das Original Repository](https://github.com/tompollard/phd_thesis_markdown/fork) on Github  
+3. Klone das Repository auf deinen PC (oder [downloade die ZIP-Datei](https://github.com/089/phd_thesis_markdown/archive/master.zip)).  
+4. Wechsel in das Verzeichnis mit der Makefile und führe in der Konsole "make pdf" (oder "make html") aus. Die erzeugte Datei findest du dann im Output-Ordner.
+**Im Falle eines Fehlers** (e.g. `make: *** [pdf] Error 43`) führe ggf. folgende Befehle aus:  
     ```
     sudo tlmgr install truncate
     sudo tlmgr install tocloft
@@ -64,25 +60,26 @@ There are some minor annoyances:
     sudo tlmgr update l3kernel
     sudo tlmgr update l3experimental
     ```
-    
-5. Edit the files in the 'source' directory, then goto step 4.  
 
-## What else do I need to know?
+5. Bearbeite die Dateien im Ordner 'source' und gehe dann wieder zu Schritt 4.
 
-Some useful points, in a random order:
-- each chapter must finish with at least one blank line, otherwise the header of the following chapter may not be picked up.
-- add two spaces at the end of a line to force a line break.
-- the template uses [John Macfarlane's Pandoc](http://johnmacfarlane.net/pandoc/README.html) to generate the output documents. Refer to this page for Markdown formatting guidelines.
-- PDFs are generated using the LaTeX templates in the style directory. Fonts etc can be changed in the TeX templates.
-- To change the citation style, just overwrite ref_format.csl with the new style. Style files can be obtained from [citationstyles.org/](http://citationstyles.org/)
-- For fellow web developers, there is a Grunt task file (Gruntfile.js) which can be used to 'watch' the markdown files. By running `$ npm install` and then `$ npm run watch` the PDF and HTML export is done automatically when saving a Markdown file.
-- You can automatically reload the HTML page on your browser using LiveReload with the command `$ npm run livereload`. The HTML page will automatically reload when saving a Markdown file after the export is done.
+## Was sollte ich sonst noch wissen?
 
-# Contributing
+Einige hilfreiche Punkte in zufälliger Reihenfolge:
 
-Contributions to the template are encouraged! There are lots of things that could be improved, like:
-- finding a way to add short captions for the tables, so that the lists of tables can be automatically generated.
-- cleaning up the LaTeX templates, which are messy at the moment.
-- improving the style of Word and TeX outputs.
+- Jedes Kapitel muss mit mindestens einer Leerzeile enden, sonst wird die Überschrift des folgenden Kapitels eventuell nicht erfasst.
+- Einen Zeilenumbruch kannst du mit zwei Leerzeichen am Ende der Zeile erzwingen.
+- die Vorlage verwendet Markdown [(Pandoc)](http://pandoc.org/MANUAL.html)
+- PDFs werden mithilfe von LaTeX-Vorlagen aus dem 'style'-Ordner erzeugt. Änderungen nimmst du am besten dort vor.
+- Um den Zitierstil zu ändern, überschreibe einfach `ref_format.csl` mit dem neuen Style. Styledateien bekommst du unter [citationstyles.org/](http://citationstyles.org/)
+- Für Webentwickler gibt es einen Grunt Task (Gruntfile.js), der die Markdowndateien überwachen kann. Mit `$ npm install` und anschließendem `$ npm run watch` wird die PDF immer dann erzeugt, wenn du eine Markdowndatei speicherst.
 
-Please fork and edit the project, then send a pull request.
+# Beitragen
+
+Beiträge zum Template sind herzlich willkommen! Es gibt vieles, was verbessert werden kann, z.B.:
+
+- Finde einen Weg, wie die Kurzbeschriftungen von Tabellen im Tabellenverzeichnis landen.
+- Aufräumarbeiten in den LaTeX-Vorlagen, die derzeit etwas chaotisch sind.
+- Styleverbesserungen für die Ausgabe im Word- bzw. TeX-Format.
+
+Bitte forke und bearbeite das Projekt und schicke anschließend einen Pullrequest. 
