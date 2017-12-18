@@ -4,9 +4,18 @@
 \renewcommand{\contentsname}{Table of Contents}
 \setcounter{tocdepth}{3}
 
+% Number of the last page in the document
+\usepackage{lastpage}
+
 % Headers and page numbering
 \usepackage{fancyhdr}
-\pagestyle{plain}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\rightmark}
+\rhead{\thepage\space von \pageref{LastPage}}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\setlength\voffset{0.25in}
 
 % Following package is used to add background image to front page
 \usepackage{wallpaper}
@@ -70,7 +79,7 @@
 \raggedbottom
 
 % Set margins
-\usepackage[top=2cm,bottom=2.5cm,left=3.5cm,right=2.5cm]{geometry}
+% \usepackage[top=2cm,bottom=2.5cm,left=3.5cm,right=2.5cm]{geometry}
 % \setlength\parindent{0.4in} % indent at start of paragraphs (set to 0.3?)
 \setlength{\parskip}{9pt}
 

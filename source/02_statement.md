@@ -3,13 +3,9 @@
 
   Um auf Nummer sicher zu gehen, sollte das Dokument https://w3-mediapool.hm.edu/mediapool/media/fk07/fk07_lokal/studienangebot_3/studiengaenge_neu/docs/ifb/Anmeldung_Bachelorarbeit_IF_112017.pdf zusätzlich zu der Erklärung auf dieser Seite ausgefüllt, ausgedruckt und abgegeben werden.
 -->
+\chapter*{Erklärung}
+
 \begin{center}
-  \includegraphics[width=0.5\textwidth]{style/hm-fk07_logo.jpg}
-
-  \vspace*{\fill}
-
-  \section*{Erklärung}
-
   \aName, geb. \aGeburtsdatum\space(\aStudiengruppe,\space\aSemester)
 \end{center}  
 
