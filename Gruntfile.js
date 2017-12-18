@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 
     var type = grunt.option('type');
-    if(!type) type = 'pdf:html';
+    if(!type) type = 'pdf';
 
     // Project configuration.
     grunt.initConfig({
