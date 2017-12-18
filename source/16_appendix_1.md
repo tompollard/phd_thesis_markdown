@@ -1,11 +1,7 @@
-# Appendix 1: Some extra stuff {.unnumbered}
+# Anhang 1: Einige Extras {.unnumbered}
 
-<!-- 
-This could be a list of papers by the author for example 
+<!--
+Dies könnte zum Beispiel eine Liste von Artikeln des Autors sein.
 -->
 
-Add appendix 1 here. Vivamus hendrerit rhoncus interdum. Sed ullamcorper et augue at porta. Suspendisse facilisis imperdiet urna, eu pellentesque purus suscipit in. Integer dignissim mattis ex aliquam blandit. Curabitur lobortis quam varius turpis ultrices egestas.
-
-
-
-
+Füge Anhang 1 hier hinzu. Vivamus hendrerit rhoncus interdum. Sed ullamcorper et augue at porta. Suspendisse facilisis imperdiet urna, eu pellentesque purus suscipit in. Integer dignissim mattis ex aliquam blandit. Curabitur lobortis quam varius turpis ultrices egestas.

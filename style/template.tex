@@ -1,9 +1,15 @@
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+\documentclass[listof=totoc,index=totoc,bibliography=totoc,$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 $if(fontfamily)$
 \usepackage{$fontfamily$}
 $else$
 \usepackage{lmodern}
 $endif$
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% german quote style, see:
+% http://mirrors.ibiblio.org/CTAN/info/translations/csquotes/de/csquotes-DE.pdf
+\usepackage[style = german]{csquotes}%
 
 % Overwrite \begin{figure}[htbp] with \begin{figure}[H]
 \usepackage{float}

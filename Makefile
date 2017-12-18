@@ -24,6 +24,8 @@ help:
 	@echo 'get local templates with: pandoc -D latex/html/etc	  				  '
 	@echo 'or generic ones from: https://github.com/jgm/pandoc-templates		  '
 
+# other csl styles: https://github.com/citation-style-language/styles
+
 pdf:
 	pandoc "$(INPUTDIR)"/*.md \
 	-o "$(OUTPUTDIR)/thesis.pdf" \
@@ -35,8 +37,10 @@ pdf:
 	-V fontsize=12pt \
 	-V papersize=a4paper \
 	-V documentclass:report \
+	-V lang:german \
+	-V mainlang:german \
 	-N \
-	--latex-engine=xelatex 
+	--latex-engine=xelatex
 
 tex:
 	pandoc "$(INPUTDIR)"/*.md \
@@ -46,6 +50,8 @@ tex:
 	-V fontsize=12pt \
 	-V papersize=a4paper \
 	-V documentclass:report \
+	-V lang:german \
+	-V mainlang:german \
 	-N \
 	--csl="$(STYLEDIR)/ref_format.csl" \
 	--latex-engine=xelatex
