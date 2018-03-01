@@ -11,10 +11,11 @@ language: bash
 
 os: osx
 
-# Set the environment path to include Pandoc binaries
-# env:
-#   global:
-#     - PATH=$TRAVIS_BUILD_DIR/usr/bin/:$PATH
+env:
+  global:
+    - PATH=$TRAVIS_BUILD_DIR/usr/bin/:$PATH
+    - PATH=/Library/TeX/texbin:$PATH
+
 
 before_install:
   # # Fetch pandoc and pandoc-citeproc binaries
@@ -30,8 +31,7 @@ before_install:
   - brew install pandoc
   - brew install pandoc-citeproc
   - brew cask install mactex
-
-
+  - tlmgr info fontspec
 
 # Attempt to create a PDF
 script:
