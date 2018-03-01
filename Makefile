@@ -34,9 +34,10 @@ pdf:
 	--highlight-style pygments \
 	-V fontsize=12pt \
 	-V papersize=a4paper \
-	-V documentclass:report \
+	-V documentclass=report \
 	-N \
-	--pdf-engine=xelatex 
+	--pdf-engine=xelatex \
+	--verbose
 
 tex:
 	pandoc "$(INPUTDIR)"/*.md \
@@ -45,7 +46,7 @@ tex:
 	--bibliography="$(BIBFILE)" \
 	-V fontsize=12pt \
 	-V papersize=a4paper \
-	-V documentclass:report \
+	-V documentclass=report \
 	-N \
 	--csl="$(STYLEDIR)/ref_format.csl" \
 	--latex-engine=xelatex
