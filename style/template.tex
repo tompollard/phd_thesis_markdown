@@ -7,12 +7,12 @@ $endif$
 
 % Overwrite \begin{figure}[htbp] with \begin{figure}[H]
 \usepackage{float}
-\let\origfigure=\figure
-\let\endorigfigure=\endfigure
-\renewenvironment{figure}[1][]{%
-\origfigure[b]
-}{%
-\endorigfigure
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+    \expandafter\origfigure\expandafter[H]
+} {
+    \endorigfigure
 }
 
 % fix for pandoc 1.14
