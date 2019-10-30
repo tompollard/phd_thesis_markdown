@@ -22,7 +22,9 @@ Comments can be added like this.
 
 ## Results
 
-Table \ref{ref_a_table} shows us how to add a table. Integer tincidunt sed nisl eget pellentesque. Mauris eleifend, nisl non lobortis fringilla, sapien eros aliquet orci, vitae pretium massa neque eu turpis. Pellentesque tincidunt aliquet volutpat. Ut ornare dui id ex sodales laoreet.
+<!-- Table formatting works same as figure formatting -->
+
+*@tbl:my_table shows us how to add a table. Integer tincidunt sed nisl eget pellentesque. Mauris eleifend, nisl non lobortis fringilla, sapien eros aliquet orci, vitae pretium massa neque eu turpis. Pellentesque tincidunt aliquet volutpat. Ut ornare dui id ex sodales laoreet.
 
 <!-- Force the table onto a newpage -->
 
@@ -41,7 +43,7 @@ Row 4               0.5                     0.6
 
 ---------------------------------------------------------------------------
 
-Table: This is the table caption. Suspendisse blandit dolor sed tellus venenatis, venenatis fringilla turpis pretium. \label{ref_a_table}
+Table: This is the table caption. Suspendisse blandit dolor sed tellus venenatis, venenatis fringilla turpis pretium. {#tbl:my_table}
 
 
 ## Discussion

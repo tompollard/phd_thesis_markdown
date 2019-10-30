@@ -18,17 +18,17 @@ help:
 	@echo '   make pdf                         generate a PDF file  			  '
 	@echo '   make docx	                       generate a Docx file 			  '
 	@echo '   make tex	                       generate a Latex file 			  '
-	@echo '                                                                       '
+	@echo '   make pdf_from_html               generate a PDF using css styling                                                     '
 	@echo ' 																	  '
 	@echo ' 																	  '
 	@echo 'get local templates with: pandoc -D latex/html/etc	  				  '
 	@echo 'or generic ones from: https://github.com/jgm/pandoc-templates		  '
 
 pdf:
-	pandoc "$(INPUTDIR)"/*.md \
+	pandoc \
+	--filter=pandoc-xnos \
+	"$(INPUTDIR)"/*.md \
 	-o "$(OUTPUTDIR)/thesis.pdf" \
-	-H "$(STYLEDIR)/preamble.tex" \
-	--template="$(STYLEDIR)/template.tex" \
 	--bibliography="$(BIBFILE)" 2>pandoc.log \
 	--csl="$(STYLEDIR)/ref_format.csl" \
 	--highlight-style pygments \
@@ -36,23 +36,21 @@ pdf:
 	-V papersize=a4paper \
 	-V documentclass=report \
 	-N \
-	--pdf-engine=xelatex \
 	--verbose
 
 tex:
 	pandoc "$(INPUTDIR)"/*.md \
-	-o "$(OUTPUTDIR)/thesis.tex" \
-	-H "$(STYLEDIR)/preamble.tex" \
 	--bibliography="$(BIBFILE)" \
 	-V fontsize=12pt \
 	-V papersize=a4paper \
 	-V documentclass=report \
 	-N \
 	--csl="$(STYLEDIR)/ref_format.csl" \
-	--latex-engine=xelatex
 
 docx:
-	pandoc "$(INPUTDIR)"/*.md \
+	pandoc \
+	--filter=pandoc-xnos \
+	 "$(INPUTDIR)"/*.md \
 	-o "$(OUTPUTDIR)/thesis.docx" \
 	--bibliography="$(BIBFILE)" \
 	--csl="$(STYLEDIR)/ref_format.csl" \
@@ -61,6 +59,7 @@ docx:
 html:
 	pandoc "$(INPUTDIR)"/*.md \
 	-o "$(OUTPUTDIR)/thesis.html" \
+	--filter=pandoc-xnos \
 	--standalone \
 	--template="$(STYLEDIR)/template.html" \
 	--bibliography="$(BIBFILE)" \
@@ -72,4 +71,21 @@ html:
 	mkdir "$(OUTPUTDIR)/source"
 	cp -r "$(INPUTDIR)/figures" "$(OUTPUTDIR)/source/figures"
 
-.PHONY: help pdf docx html tex
+pdf_from_html:
+	pandoc \
+	--filter=pandoc-xnos \
+	"$(INPUTDIR)"/*.md \
+	-t html \
+	--standalone \
+	--template="$(STYLEDIR)/template.html" \
+	--bibliography="$(BIBFILE)" \
+	--csl="$(STYLEDIR)/ref_format.csl" \
+	--include-in-header="$(STYLEDIR)/style.css" \
+	--toc \
+	--pdf-engine=wkhtmltopdf \
+	-o "$(OUTPUTDIR)/thesis.pdf" \
+	--number-sections
+	rm -rf "$(OUTPUTDIR)/source"
+	mkdir "$(OUTPUTDIR)/source"
+
+.PHONY: help pdf docx html tex pdf_from_html
