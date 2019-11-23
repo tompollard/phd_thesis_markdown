@@ -1,3 +1,8 @@
+---
+lof: True
+
+---
+
 # Research containing a figure
 
 ## Introduction
@@ -35,13 +40,13 @@ to **Fig. number: mylabel** by prefixing with @ for mid-sentence references and 
 
 <!-- 
 Figures can be added with the following syntax:
-![my_caption ](source/figures/my_image.pdf){#fig:mylabel}{ width=50% }
+![main_text_caption](source/figures/my_image.pdf, "short_caption(optional)"){#fig:mylabel}{ width=50% }
 
 For details on setting attributes like width and height, see:
 http://pandoc.org/MANUAL.html#extension-link_attributes
 --> 
 
-![RV Calypso is a former British Royal Navy minesweeper converted into a research vessel for the oceanographic researcher Jacques-Yves Cousteau. It was equipped with a mobile laboratory for underwater field research.](source/figures/example_figure.pdf){ width=100% }{#fig:my_fig}
+![RV Calypso is a former British Royal Navy minesweeper converted into a research vessel for the oceanographic researcher Jacques-Yves Cousteau. It was equipped with a mobile laboratory for underwater field research.](source/figures/example_figure.pdf "It's a boat"){ width=100% }{#fig:my_fig}
 
 ## Conclusion
 

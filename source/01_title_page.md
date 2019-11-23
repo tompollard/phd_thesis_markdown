@@ -9,7 +9,6 @@ and add the centred logo
 
     % Delete the following line
     % to remove the UCL header logo
-    \ThisULCornerWallPaper{1.0}{style/univ_logo.eps}
         
         \vspace*{2.5cm}
         

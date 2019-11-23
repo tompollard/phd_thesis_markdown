@@ -43,7 +43,7 @@ Row 4               0.5                     0.6
 
 ---------------------------------------------------------------------------
 
-Table: This is the table caption. Suspendisse blandit dolor sed tellus venenatis, venenatis fringilla turpis pretium. {#tbl:my_table}
+Table: This is the table caption. {#tbl:my_table}
 
 
 ## Discussion

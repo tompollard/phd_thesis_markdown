@@ -6,6 +6,7 @@ INPUTDIR=$(BASEDIR)/source
 OUTPUTDIR=$(BASEDIR)/output
 TEMPLATEDIR=$(INPUTDIR)/templates
 STYLEDIR=$(BASEDIR)/style
+SCRATCHDIR=$(BASEDIR)/scratch
 
 BIBFILE=$(INPUTDIR)/references.bib
 
@@ -35,7 +36,7 @@ pdf:
 	-V fontsize=12pt \
 	-V papersize=a4paper \
 	-V documentclass=report \
-	-N \
+	--pdf-engine=xelatex \
 	--verbose
 
 tex:
@@ -71,21 +72,5 @@ html:
 	mkdir "$(OUTPUTDIR)/source"
 	cp -r "$(INPUTDIR)/figures" "$(OUTPUTDIR)/source/figures"
 
-pdf_from_html:
-	pandoc \
-	--filter=pandoc-xnos \
-	"$(INPUTDIR)"/*.md \
-	-t html \
-	--standalone \
-	--template="$(STYLEDIR)/template.html" \
-	--bibliography="$(BIBFILE)" \
-	--csl="$(STYLEDIR)/ref_format.csl" \
-	--include-in-header="$(STYLEDIR)/style.css" \
-	--toc \
-	--pdf-engine=wkhtmltopdf \
-	-o "$(OUTPUTDIR)/thesis.pdf" \
-	--number-sections
-	rm -rf "$(OUTPUTDIR)/source"
-	mkdir "$(OUTPUTDIR)/source"
 
-.PHONY: help pdf docx html tex pdf_from_html
+.PHONY: help pdf docx html tex 
