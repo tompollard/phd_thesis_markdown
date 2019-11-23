@@ -72,5 +72,13 @@ html:
 	mkdir "$(OUTPUTDIR)/source"
 	cp -r "$(INPUTDIR)/figures" "$(OUTPUTDIR)/source/figures"
 
+multiline_tables:
+	pandoc "$(SCRATCHDIR)/tables.md" \
+	-t markdown+multiline_tables \
+	-o "$(SCRATCHDIR)/cleaned_tables.md"
 
-.PHONY: help pdf docx html tex 
+tables: multiline_tables
+	pandoc "$(SCRATCHDIR)/cleaned_tables.md" \
+	-o "$(SCRATCHDIR)/tables.tex"
+
+.PHONY: help pdf docx html tex multiline_tables tables
