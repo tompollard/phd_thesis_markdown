@@ -46,11 +46,11 @@
 \usepackage{color}
 
 % JAVA CODE BLOCKS
-\definecolor{backcolour}{RGB}{242,242,242}
-\definecolor{javared}{rgb}{0.6,0,0}
-\definecolor{javagreen}{rgb}{0.25,0.5,0.35}
-\definecolor{javapurple}{rgb}{0.5,0,0.35}
-\definecolor{javadocblue}{rgb}{0.25,0.35,0.75}
+%\definecolor{backcolour}{RGB}{242,242,242}
+%\definecolor{javared}{rgb}{0.6,0,0}
+%\definecolor{javagreen}{rgb}{0.25,0.5,0.35}
+%\definecolor{javapurple}{rgb}{0.5,0,0.35}
+%\definecolor{javadocblue}{rgb}{0.25,0.35,0.75}
 
 \lstdefinestyle{javaCodeStyle}{
   language=Java,                         % the language of the code
@@ -77,7 +77,7 @@
 %Attempt to set math size
 %First size must match the text size in the document or command will not work
 %\DeclareMathSizes{display size}{text size}{script size}{scriptscript size}.
-\DeclareMathSizes{12}{13}{7}{7}
+%\DeclareMathSizes{12}{13}{7}{7}
 
 % ---- CUSTOM AMPERSAND
 % \newcommand{\amper}{{\fontspec[Scale=.95]{Adobe Caslon Pro}\selectfont\itshape\&}}
@@ -99,14 +99,15 @@
 
 % Adjust spacing between lines to 1.5
 \usepackage{setspace}
-\onehalfspacing
-% \doublespacing
+% \onehalfspacing
+\doublespacing
 \raggedbottom
 
 % Set margins
 \usepackage[top=1.5in,bottom=1.5in,left=1.5in,right=1.4in]{geometry}
-% \setlength\parindent{0.4in} % indent at start of paragraphs (set to 0.3?)
+\setlength\parindent{0.5in} % indent at start of paragraphs (set to 0.3?)
 \setlength{\parskip}{9pt}
+\usepackage{indentfirst}
 
 % Add space between pararaphs
 % http://texblog.org/2012/11/07/correctly-typesetting-paragraphs-in-latex/
@@ -121,6 +122,7 @@
 \usepackage{booktabs}
 \usepackage{threeparttable}
 \usepackage{array}
+\usepackage{makecell}
 \newcolumntype{x}[1]{%
 >{\centering\arraybackslash}m{#1}}%
 
@@ -129,3 +131,10 @@
 
 % Don't let floats cross subsections
 % \usepackage[section,subsection]{extraplaceins}
+
+% Rotate images and tables
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{pdflscape}
+\usepackage{graphicx}
+\usepackage{rotating}
