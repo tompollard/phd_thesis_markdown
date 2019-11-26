@@ -19,20 +19,20 @@ help:
 	@echo '   make pdf                         generate a PDF file  			  '
 	@echo '   make docx	                       generate a Docx file 			  '
 	@echo '   make tex	                       generate a Latex file 			  '
-	@echo '   make pdf_from_html               generate a PDF using css styling                                                     '
 	@echo ' 																	  '
 	@echo ' 																	  '
 	@echo 'get local templates with: pandoc -D latex/html/etc	  				  '
 	@echo 'or generic ones from: https://github.com/jgm/pandoc-templates		  '
 
 pdf:
-	pandoc \
+	pandoc  \
+	--filter=pandoc-shortcaption \
 	--filter=pandoc-xnos \
 	"$(INPUTDIR)"/*.md \
 	-o "$(OUTPUTDIR)/thesis.pdf" \
+	-H "$(STYLEDIR)/preamble.tex" \
 	--bibliography="$(BIBFILE)" 2>pandoc.log \
 	--csl="$(STYLEDIR)/ref_format.csl" \
-	--highlight-style pygments \
 	-V fontsize=12pt \
 	-V papersize=a4paper \
 	-V documentclass=report \
@@ -50,8 +50,9 @@ tex:
 
 docx:
 	pandoc \
+	--filter=pandoc-shortcaption \
 	--filter=pandoc-xnos \
-	 "$(INPUTDIR)"/*.md \
+	"$(INPUTDIR)"/*.md \
 	-o "$(OUTPUTDIR)/thesis.docx" \
 	--bibliography="$(BIBFILE)" \
 	--csl="$(STYLEDIR)/ref_format.csl" \
@@ -60,6 +61,7 @@ docx:
 html:
 	pandoc "$(INPUTDIR)"/*.md \
 	-o "$(OUTPUTDIR)/thesis.html" \
+	--filter=pandoc-shortcaption \
 	--filter=pandoc-xnos \
 	--standalone \
 	--template="$(STYLEDIR)/template.html" \

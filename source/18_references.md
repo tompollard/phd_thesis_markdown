@@ -1,4 +1,6 @@
 \footnotesize
+\singlespacing
+\setlength{\parindent}{0in}
 
 <!-- 
 Do not edit this page.

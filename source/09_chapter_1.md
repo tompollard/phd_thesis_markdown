@@ -1,3 +1,8 @@
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\doublespacing
+\setlength{\parindent}{0.5in}
+
 # Introduction, with a citation
 
 ## Background
@@ -27,8 +32,8 @@ This is a subsection of the middle bit. Quisque sit amet tempus arcu, ac suscipi
 ## Summary of chapters
 
 <!-- 
-For italic, add one * on either side of the text
-For bold, add two * on either side of the text
+For italic, add _ on either side of the text
+For bold, add ** on either side of the text
 For bold and italic, add _** on either side of the text
 -->
 
