@@ -32,6 +32,7 @@ pdf:
 	--bibliography="$(BIBFILE)" 2>pandoc.log \
 	--csl="$(STYLEDIR)/ref_format.csl" \
 	--highlight-style pygments \
+	-F mermaid-filter \
 	-V fontsize=12pt \
 	-V papersize=a4paper \
 	-V documentclass=report \
@@ -44,6 +45,7 @@ tex:
 	-o "$(OUTPUTDIR)/thesis.tex" \
 	-H "$(STYLEDIR)/preamble.tex" \
 	--bibliography="$(BIBFILE)" \
+	-F mermaid-filter \
 	-V fontsize=12pt \
 	-V papersize=a4paper \
 	-V documentclass=report \
@@ -54,6 +56,7 @@ tex:
 docx:
 	pandoc "$(INPUTDIR)"/*.md \
 	-o "$(OUTPUTDIR)/thesis.docx" \
+	-F mermaid-filter \
 	--bibliography="$(BIBFILE)" \
 	--csl="$(STYLEDIR)/ref_format.csl" \
 	--toc
@@ -61,6 +64,7 @@ docx:
 html:
 	pandoc "$(INPUTDIR)"/*.md \
 	-o "$(OUTPUTDIR)/thesis.html" \
+	-F mermaid-filter \
 	--standalone \
 	--template="$(STYLEDIR)/template.html" \
 	--bibliography="$(BIBFILE)" \
