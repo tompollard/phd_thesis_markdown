@@ -28,6 +28,7 @@ pdf:
 	pandoc  \
 	--filter=pandoc-shortcaption \
 	--filter=pandoc-xnos \
+	--template="$(STYLEDIR)/template.tex" \
 	"$(INPUTDIR)"/*.md \
 	-o "$(OUTPUTDIR)/thesis.pdf" \
 	-H "$(STYLEDIR)/preamble.tex" \
@@ -41,6 +42,9 @@ pdf:
 
 tex:
 	pandoc "$(INPUTDIR)"/*.md \
+	--filter=pandoc-shortcaption \
+	--filter=pandoc-xnos \
+	--template="$(STYLEDIR)/template.tex" \
 	--bibliography="$(BIBFILE)" \
 	-V fontsize=12pt \
 	-V papersize=a4paper \
