@@ -35,7 +35,7 @@ Fig. @fig:my_fig shows how to add a figure. Donec ut lacinia nibh. Nam tincidunt
 
 <!-- 
 Figures can be added with the following syntax:
-![main_text_caption](source/figures/my_image.pdf, "short_caption(optional)"){#fig:mylabel}{ width=50% }
+![main_text_caption](source/figures/my_image.pdf "short_caption(optional)"){#fig:mylabel}{ width=50% }
 
 For details on setting attributes like width and height, see:
 http://pandoc.org/MANUAL.html#extension-link_attributes
