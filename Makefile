@@ -15,7 +15,8 @@ help:
 	@echo 'Makefile for the Markdown thesis                                       '
 	@echo '                                                                       '
 	@echo 'Usage:                                                                 '
-	@echo '   make html                        generate a web version             '
+	@echo '   make install                     install pandoc plugins
+	@echo '   make html                        generate a web version             
 	@echo '   make pdf                         generate a PDF file  			  '
 	@echo '   make docx	                       generate a Docx file 			  '
 	@echo '   make tex	                       generate a Latex file 			  '
@@ -24,6 +25,9 @@ help:
 	@echo 'get local templates with: pandoc -D latex/html/etc	  				  '
 	@echo 'or generic ones from: https://github.com/jgm/pandoc-templates		  '
 
+install:
+	sh $(BASEDIR)/install.sh
+	
 pdf:
 	pandoc  \
 	--filter=pandoc-shortcaption \
@@ -79,4 +83,4 @@ html:
 	cp -r "$(INPUTDIR)/figures" "$(OUTPUTDIR)/source/figures"
 
 
-.PHONY: help pdf docx html tex 
+.PHONY: help install pdf docx html tex 
