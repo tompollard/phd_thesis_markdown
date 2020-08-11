@@ -1,0 +1,12 @@
+---
+pagetitle: This is the HTML document title
+title: This is the title of the thesis
+subtitle: This is the subtitle of the thesis
+author: Firstname Surname
+date: January 2015
+location: University College London, UK
+supervisor:
+- Professor Louis Fage
+- Captain J. Y. Cousteau
+degree: Doctor of Philosophy
+---

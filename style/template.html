@@ -38,7 +38,7 @@
         $for(include-before)$
             $include-before$
         $endfor$
-        <!--
+
         $if(title)$
             <div id="$idprefix$header">
                 <h1 class="title">$title$</h1>
@@ -53,11 +53,7 @@
                 $endif$
             </div>
         $endif$
-        -->
-        <div id="title-page">
-            <h1>This is the title of the thesis</h1>
-            <h2>Firstname Surname</h2>
-        </div>
+
         $if(toc)$
             <div id="$idprefix$TOC">
                 $toc$
@@ -79,4 +75,3 @@
         $endfor$
     </body>
 </html>
-
