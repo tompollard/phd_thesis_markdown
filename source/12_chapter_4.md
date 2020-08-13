@@ -47,5 +47,9 @@ http://pandoc.org/MANUAL.html#extension-link_attributes
 
 This is the conclusion to the chapter. Quisque nec purus a quam consectetur volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In lorem justo, convallis quis lacinia eget, laoreet eu metus. Fusce blandit tellus tellus. Curabitur nec cursus odio. Quisque tristique eros nulla, vitae finibus lorem aliquam quis. Interdum et malesuada fames ac ante ipsum primis in faucibus.
 
+<!--
+Below is an example that does not utilize the shortcaption feature, as it already fits neatly on a line. Note that multiple file formats are acceptable for sources (jpg, tiff, pdf, etc.)
+-->
 
+![This is not a boat](source/figures/full_caption_example.jpg){#fig:other_fig width=100%}
 
