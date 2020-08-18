@@ -22,27 +22,39 @@ Comments can be added like this.
 
 ## Results
 
-Table \ref{ref_a_table} shows us how to add a table. Integer tincidunt sed nisl eget pellentesque. Mauris eleifend, nisl non lobortis fringilla, sapien eros aliquet orci, vitae pretium massa neque eu turpis. Pellentesque tincidunt aliquet volutpat. Ut ornare dui id ex sodales laoreet.
+<!-- Table formatting works same as figure formatting -->
+
+Table @tbl:random shows us how to add a table. Integer tincidunt sed nisl eget pellentesque. Mauris eleifend, nisl non lobortis fringilla, sapien eros aliquet orci, vitae pretium massa neque eu turpis. Pellentesque tincidunt aliquet volutpat. Ut ornare dui id ex sodales laoreet.
 
 <!-- Force the table onto a newpage -->
 
 \newpage
 
----------------------------------------------------------------------------
-Column 1            Column 2                Column 3
---------------      -------------------     -------------------
-Row 1               0.1                     0.2
+-----------------------------------------------------------------------------------
+Landmass      \%      Number of   Dolphins per    How Many     How Many    Forbidden
+             stuff    Owls        Capita         Foos         Bars        Float
+------------ ------- --------- -------------- ------------ ------------ -----------
+    North       94%    20,028       17,465        12,084       20,659       1.71
+ America                                                               
 
-Row 2               0.3                     0.3
+Central      91%     6564         6350         8,189        12,012       1.52
+America                                                               
 
-Row 3               0.4                     0.4      
+    South       86%     3902         4127         5,205        6,565        1.28
+America                                                               
 
-Row 4               0.5                     0.6
+    Africa      84%     2892         3175         3,862        4,248         1.1
 
----------------------------------------------------------------------------
+    Europe      92%    20,964       17,465        15,303       24,203       1.58
 
-Table: This is the table caption. Suspendisse blandit dolor sed tellus venenatis, venenatis fringilla turpis pretium. \label{ref_a_table}
+    Asia       87%     6852         6350         8,255        11,688       1.47
 
+Oceania      87%     4044         4127         5,540        6,972        1.28
+
+Antarctica    83%     2964         3175         4,402        4,941        1.13
+-----------------------------------------------------------------------------------
+
+Table: Important data for various land masses. {#tbl:random}
 
 ## Discussion
 

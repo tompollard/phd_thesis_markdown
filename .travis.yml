@@ -32,6 +32,8 @@ before_install:
   - brew install pandoc-citeproc
   - brew cask install mactex
   - tlmgr info fontspec
+  - sudo pip3 install pandoc-fignos pandoc-eqnos pandoc-tablenos \
+            pandoc-secnos pandoc-shortcaption
 
 # Attempt to create a PDF
 script:

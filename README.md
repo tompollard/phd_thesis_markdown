@@ -19,6 +19,7 @@ Markdown is a super-friendly plain text format that can be easily converted to a
 - it automatically handles the table of contents, bibliography etc with Pandoc.
 - comments, drafts of text, etc can be added to the document by wrapping them in &lt;!--  --&gt;
 - it works well with Git, so keeping backups is straightforward. Just commit the changes and then push them to your repository.
+- it is able to take advantage of autocompletion capabilities for figures and citations in several text editors (VSCode, Sublime, etc.)
 - there is no lock-in. If you decide that Markdown isn't for you, then just output to Word, or whatever, and continue working in the new format.
 
 ## Are there any reasons not to use Markdown?
@@ -37,6 +38,7 @@ There are some minor annoyances:
 - Makefile => contains instructions for using Pandoc to produce the final thesis.
 - output/ => directory to hold the final version.
 - source/ => directory to hold the thesis content. Includes the references.bib file.
+- scratch/ => directory to hold tables which can be converted between different formats.
 - source/figures/ => directory to hold the figures.
 - style/ => directory to hold the style documents.
 
@@ -45,25 +47,13 @@ There are some minor annoyances:
 1. Install the following software:
     - A text editor, like [Sublime](https://www.sublimetext.com/), which is what you'll use write the thesis.  
     - A LaTeX distribution (for example, [MacTeX](https://tug.org/mactex/) for Mac users).
-    - [Pandoc](http://johnmacfarlane.net/pandoc), for converting the Markdown to the output format of your choice.  You may also need to install [Pandoc cite-proc](http://pandoc.org/demo/example19/Extension-citations.html) to create the bibliography.
-    - Install @martisak's shortcaption module for Pandoc, with `pip install pandoc-shortcaption`
+    - [Pandoc](http://johnmacfarlane.net/pandoc), for converting the Markdown to the output format of your choice.  
+    - Pandoc plugins by running ```make install```
     - Git, for version control.
 2. [Fork the repository](https://github.com/tompollard/phd_thesis_markdown/fork) on Github  
 3. Clone the repository onto your local computer (or [download the Zip file](https://github.com/tompollard/phd_thesis_markdown/archive/master.zip)).  
 4. Navigate to the directory that contains the Makefile and type "make pdf" (or "make html") at the command line to update the PDF (or HTML) in the output directory.  
-**In case of an error** (e.g. `make: *** [pdf] Error 43`) run the following commands:  
-    ```
-    sudo tlmgr install truncate
-    sudo tlmgr install tocloft
-    sudo tlmgr install wallpaper
-    sudo tlmgr install morefloats
-    sudo tlmgr install sectsty
-    sudo tlmgr install siunitx
-    sudo tlmgr install threeparttable
-    sudo tlmgr update l3packages
-    sudo tlmgr update l3kernel
-    sudo tlmgr update l3experimental
-    ```
+**In case of an error** (e.g. `make: *** [pdf] Error 43`), consult [this article](https://dalwilliams.info/lessons-learned-from-writing-a-phd-dissertation-in-markdown.html) for possible fixes. Most importantly, make sure tlmgr is properly installed, then run ```install.sh``
     
 5. Edit the files in the 'source' directory, then goto step 4.  
 

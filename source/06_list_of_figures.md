@@ -1,13 +1,8 @@
-# List of figures {.unnumbered}
+\listoffigures
+<!-- 
+The \listoffigures will use short captions first, and the whole caption if none is present. To keep this list readable, ensure each figure has a short caption, e.g.
+![main_text_caption](source/figures/my_image.pdf "short caption used in alt text and \listoffigures"){#fig:mylabel}{ width=50% }
 
-<!--
-For me, this was the only drawback of writing in Markdown: it is not possible to add a short caption to figures and tables. This means that the \listoftables and \listoffigures commands will generate lists using the full titles, which is probably isn't what you want. For now, the solution is to create the lists manually, when everything else is finished.
+See chapter 4 for more examples.
 -->
-
-Figure 4.1  This is an example figure . . .              \hfill{pp}  
-Figure x.x  Short title of the figure . . .              \hfill{pp}  
-
-\pagenumbering{roman}
-\setcounter{page}{3}
-
 \newpage
