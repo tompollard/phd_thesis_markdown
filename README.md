@@ -90,6 +90,17 @@ Some useful points, in a random order:
 - For fellow web developers, there is a Grunt task file (Gruntfile.js) which can be used to 'watch' the markdown files. By running `$ npm install` and then `$ npm run watch` the PDF and HTML export is done automatically when saving a Markdown file.
 - You can automatically reload the HTML page on your browser using LiveReload with the command `$ npm run livereload`. The HTML page will automatically reload when saving a Markdown file after the export is done.
 
+### Problems with tables
+
+Sometimes, either multiple lines of text are needed in a table cell, Pandoc will incorrectly render tables with text overlapping, or the whitespace in your columns doesn't make sense. There are `make` directives to fix this, which work as follows:
+
+1. Create a markdown file outside of the source directory (/scratch/tables.md in this repository)
+2. Paste your problem tables (in markdown form) into this file
+3. Run `make multiline_tables`
+4. Paste the new multi-line tables where the original tables would be in your document
+
+If you need a table in landscape mode, or need to apply advanced LaTeX formatting, the `make_tables` directive will do this for you. Again, consult [this blog post](https://dalwilliams.info/lessons-learned-from-writing-a-phd-dissertation-in-markdown.html) for troubleshooting.
+
 # Contributing
 
 Contributions to the template are encouraged! There are lots of things that could be improved, like:
