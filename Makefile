@@ -11,23 +11,29 @@ SCRATCHDIR=$(BASEDIR)/scratch
 BIBFILE=$(INPUTDIR)/references.bib
 
 help:
-	@echo ' 																	  '
+	@echo ' 							'
 	@echo 'Makefile for the Markdown thesis                                       '
 	@echo '                                                                       '
 	@echo 'Usage:                                                                 '
-	@echo '   make install                     install pandoc plugins
-	@echo '   make html                        generate a web version             
+	@echo '   make install                     install pandoc plugins             '
+	@echo '   make html                        generate a web version              '
 	@echo '   make pdf                         generate a PDF file  			  '
 	@echo '   make docx	                       generate a Docx file 			  '
 	@echo '   make tex	                       generate a Latex file 			  '
 	@echo ' 																	  '
+	@echo '   multiline_tables                 convert a large markdown table into a$\'
+	@echo '		                           multi-line format                      '
 	@echo ' 																	  '
+	@echo '   tables	                       convert a md table into LaTeX, to$\'
+	@echo '                                       be used sideways or with other$\'
+	@echo '      			                       advanced formatting'
+	@echo '                                                                       '
 	@echo 'get local templates with: pandoc -D latex/html/etc	  				  '
 	@echo 'or generic ones from: https://github.com/jgm/pandoc-templates		  '
 
 install:
 	sh $(BASEDIR)/install.sh
-	
+
 pdf:
 	pandoc  \
 	--filter=pandoc-shortcaption \
@@ -82,5 +88,13 @@ html:
 	mkdir "$(OUTPUTDIR)/source"
 	cp -r "$(INPUTDIR)/figures" "$(OUTPUTDIR)/source/figures"
 
+multiline_tables:
+	pandoc "$(SCRATCHDIR)/tables.md" \
+	-t markdown+multiline_tables \
+	-o "$(SCRATCHDIR)/cleaned_tables.md"
 
-.PHONY: help install pdf docx html tex 
+tables: multiline_tables
+	pandoc "$(SCRATCHDIR)/cleaned_tables.md" \
+	-o "$(SCRATCHDIR)/tables.tex"
+
+.PHONY: help install pdf docx html tex
