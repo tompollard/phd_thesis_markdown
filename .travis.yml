@@ -11,6 +11,8 @@ language: bash
 
 os: osx
 
+services: docker
+
 env:
   global:
     - PATH=$TRAVIS_BUILD_DIR/usr/bin/:$PATH
@@ -28,6 +30,7 @@ before_install:
   # - sudo apt-get install texlive-science
   # # Install fonts
   # - sudo apt-get install lmodern
+  - docker build -t dendrondal/md_thesis .
   - brew install pandoc
   - brew install pandoc-citeproc
   - brew cask install mactex
@@ -40,3 +43,4 @@ script:
   - make pdf
   - cat pandoc.log
   - make html
+  - docker run --volume "`pwd`:/data" dendrondal/md_thesis pdf
