@@ -11,18 +11,18 @@ SCRATCHDIR=$(BASEDIR)/scratch
 BIBFILE=$(INPUTDIR)/references.bib
 
 help:
-	@echo ' 																	  '
+	@echo ' 							'
 	@echo 'Makefile for the Markdown thesis                                       '
 	@echo '                                                                       '
 	@echo 'Usage:                                                                 '
-	@echo '   make install                     install pandoc plugins
-	@echo '   make html                        generate a web version
+	@echo '   make install                     install pandoc plugins             '
+	@echo '   make html                        generate a web version              '
 	@echo '   make pdf                         generate a PDF file  			  '
 	@echo '   make docx	                       generate a Docx file 			  '
 	@echo '   make tex	                       generate a Latex file 			  '
 	@echo ' 																	  '
 	@echo '   multiline_tables                 convert a large markdown table into a$\'
-	@echo '									                                        multi-line format'
+	@echo '		                           multi-line format                      '
 	@echo ' 																	  '
 	@echo '   tables	                       convert a md table into LaTeX, to$\'
 	@echo '                                       be used sideways or with other$\'
