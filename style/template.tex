@@ -161,26 +161,64 @@ $if(csl-refs)$
   {\par}
 $endif$
 
-$if(title)$
-\title{$title$$if(subtitle)$\\\vspace{0.5em}{\large $subtitle$}$endif$}
-$endif$
-$if(author)$
-\author{$for(author)$$author$$sep$ \and $endfor$}
-$endif$
-\date{$date$}
 $for(header-includes)$
 $header-includes$
 $endfor$
 
 \begin{document}
-$if(title)$
-\maketitle
-$endif$
-$if(abstract)$
-\begin{abstract}
-$abstract$
-\end{abstract}
-$endif$
+
+
+\begin{titlepage}
+    \begin{center}
+
+    % Delete the following line
+    % to remove the UCL header logo
+    \ThisULCornerWallPaper{1.0}{style/univ_logo.eps}
+
+        \vspace*{2.5cm}
+
+        \huge
+        $title$
+
+        $if(subtitle)$
+        \vspace{.5cm}
+
+        \Large
+        $subtitle$
+        $endif$
+
+
+        \vspace{1.5cm}
+
+        \Large
+        $author$
+
+        \vspace{1.5cm}
+
+        \normalsize
+        A thesis presented for the degree of\\
+        $degree$
+
+        \vfill
+
+        \normalsize
+        Supervised by:\\
+        $for(supervisor)$$supervisor$$sep$ \\ $endfor$
+
+        \vspace{0.8cm}
+
+        % Uncomment the following line
+        % to add a centered university logo
+        % \includegraphics[width=0.4\textwidth]{style/univ_logo.eps}
+
+        \normalsize
+        $location$\\
+        $date$
+
+        % Except where otherwise noted, content in this thesis is licensed under a Creative Commons Attribution 4.0 License (http://creativecommons.org/licenses/by/4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. Copyright 2015,Tom Pollard.
+
+    \end{center}
+\end{titlepage}
 
 $for(include-before)$
 $include-before$

@@ -16,7 +16,7 @@ help:
 	@echo '                                                                       '
 	@echo 'Usage:                                                                 '
 	@echo '   make install                     install pandoc plugins
-	@echo '   make html                        generate a web version             
+	@echo '   make html                        generate a web version
 	@echo '   make pdf                         generate a PDF file  			  '
 	@echo '   make docx	                       generate a Docx file 			  '
 	@echo '   make tex	                       generate a Latex file 			  '
@@ -27,13 +27,14 @@ help:
 
 install:
 	sh $(BASEDIR)/install.sh
-	
+
 pdf:
 	pandoc  \
 	--filter=pandoc-shortcaption \
 	--filter=pandoc-xnos \
 	--template="$(STYLEDIR)/template.tex" \
 	"$(INPUTDIR)"/*.md \
+	"$(INPUTDIR)/metadata.yml" \
 	-o "$(OUTPUTDIR)/thesis.pdf" \
 	-H "$(STYLEDIR)/preamble.tex" \
 	--bibliography="$(BIBFILE)" 2>pandoc.log \
@@ -49,6 +50,9 @@ tex:
 	--filter=pandoc-shortcaption \
 	--filter=pandoc-xnos \
 	--template="$(STYLEDIR)/template.tex" \
+	"$(INPUTDIR)/metadata.yml" \
+	-o "$(OUTPUTDIR)/thesis.tex" \
+	-H "$(STYLEDIR)/preamble.tex" \
 	--bibliography="$(BIBFILE)" \
 	-V fontsize=12pt \
 	-V papersize=a4paper \
@@ -61,6 +65,7 @@ docx:
 	--filter=pandoc-shortcaption \
 	--filter=pandoc-xnos \
 	"$(INPUTDIR)"/*.md \
+	"$(INPUTDIR)/metadata.yml" \
 	-o "$(OUTPUTDIR)/thesis.docx" \
 	--bibliography="$(BIBFILE)" \
 	--csl="$(STYLEDIR)/ref_format.csl" \
@@ -68,6 +73,7 @@ docx:
 
 html:
 	pandoc "$(INPUTDIR)"/*.md \
+	"$(INPUTDIR)/metadata.yml" \
 	-o "$(OUTPUTDIR)/thesis.html" \
 	--filter=pandoc-shortcaption \
 	--filter=pandoc-xnos \
@@ -83,4 +89,4 @@ html:
 	cp -r "$(INPUTDIR)/figures" "$(OUTPUTDIR)/source/figures"
 
 
-.PHONY: help install pdf docx html tex 
+.PHONY: help install pdf docx html tex
