@@ -37,6 +37,7 @@ before_install:
 
 # Attempt to create a PDF
 script:
+  - make help
   - make pdf
   - cat pandoc.log
   - make html
