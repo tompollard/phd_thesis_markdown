@@ -10,11 +10,14 @@ SCRATCHDIR=$(BASEDIR)/scratch
 
 BIBFILE=$(INPUTDIR)/references.bib
 
+DOCKER_TAG=phd_thesis_markdown
+
 help:
 	@echo ''
 	@echo 'Makefile for the Markdown thesis'
 	@echo ''
 	@echo 'Usage:'
+	@echo '   make docker                      build docker image "$(DOCKER_TAG)"'
 	@echo '   make install                     install pandoc plugins'
 	@echo '   make html                        generate a web version'
 	@echo '   make pdf                         generate a PDF file'
@@ -24,6 +27,9 @@ help:
 	@echo ''
 	@echo 'get local templates with: pandoc -D latex/html/etc'
 	@echo 'or generic ones from: https://github.com/jgm/pandoc-templates'
+
+docker:
+	docker build --tag "$(DOCKER_TAG)" .
 
 install:
 	sh $(BASEDIR)/install.sh
@@ -89,4 +95,4 @@ html:
 	cp -r "$(INPUTDIR)/figures" "$(OUTPUTDIR)/source/figures"
 
 
-.PHONY: help install pdf docx html tex
+.PHONY: help docker install pdf docx html tex
