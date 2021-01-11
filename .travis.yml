@@ -29,7 +29,6 @@ before_install:
   # # Install fonts
   # - sudo apt-get install lmodern
   - brew install pandoc
-  - brew install pandoc-citeproc
   - brew cask install mactex
   - tlmgr info fontspec
   - sudo pip3 install pandoc-fignos pandoc-eqnos pandoc-tablenos \
