@@ -40,7 +40,7 @@ install:
   - conda create -n phd python=${PYTHON_VERSION} pandoc
   - conda activate phd
   # Will this take too long?
-  - brew cask install mactex
+  - brew install --cask mactex
   - make install
 
 # Attempt to create a PDF
