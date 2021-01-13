@@ -18,9 +18,11 @@ env:
 
 python:
   # We don't actually use the Travis Python, but this keeps it organized.
-  - "2.7"
-  - "3.5"
-  - "3.6"
+  # - "2.7"
+  # - "3.5"
+  # - "3.6"
+  - "3.7"
+  - "3.8"
 
 install:
   # We do this conditionally because it saves us some downloading if the
@@ -37,13 +39,16 @@ install:
   - conda update -q conda
   # Useful for debugging any issues with conda
   - conda info -a
+  # Make python venv
   - conda create -n phd python=${PYTHON_VERSION} pandoc
   - conda activate phd
-  # Will this take too long?
+  # The install of mactex takes a long time
   - brew install --cask mactex
+  - tlmgr update --self
+  # Installs both python and texlive dependencies
   - make install
 
-# Attempt to create a PDF
+# Attempt to create all document output types
 script:
   - make help
   - make all
