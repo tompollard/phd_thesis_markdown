@@ -44,7 +44,7 @@ install:
   - conda activate phd
   # The install of mactex takes a long time
   - brew install --cask mactex
-  - tlmgr update --self
+  - sudo tlmgr update --self
   # Installs both python and texlive dependencies
   - make install
 
