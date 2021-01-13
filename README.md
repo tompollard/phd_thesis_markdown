@@ -10,6 +10,23 @@ If you have used this template in your work, please cite the following publicati
 
 > Tom Pollard et al. (2016). Template for writing a PhD thesis in Markdown. Zenodo. http://dx.doi.org/10.5281/zenodo.58490
 
+## Quickstart
+If you're a mac user and you have conda and brew installed, run the following in your terminal to install and generate the example outputs:
+```bash
+# get texlive
+brew install --cask mactex
+
+# update tlmgr
+tlmgr update --self
+
+# make python venv and install pandoc
+conda create -n phd -y python=3.7 pandoc
+conda activate phd
+
+# Install required python and texlive packages
+make install
+```
+
 ## Why write my thesis in Markdown?
 
 Markdown is a super-friendly plain text format that can be easily converted to a bunch of other formats like PDF, Word and LaTeX. You'll enjoy working in Markdown because:
