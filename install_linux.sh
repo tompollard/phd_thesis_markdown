@@ -1,7 +1,5 @@
-
 #!/usr/bin/env bash
 
-sudo apt-get install pandoc-citeproc &&
 sudo tlmgr install truncate &&
 sudo tlmgr install tocloft &&
 sudo tlmgr install wallpaper &&
