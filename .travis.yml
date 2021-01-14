@@ -37,6 +37,7 @@ addons:
     update: true
 
 before_install:
+  - sudo tlmgr update --self
   # Install conda
   - |
     if [ "$TRAVIS_OS_NAME" = "osx" ]; then
@@ -69,7 +70,6 @@ before_install:
   #   elif [ "$TRAVIS_OS_NAME" = "linux" ]; then
   #     sudo apt-get install texlive
   #   fi
-  - sudo tlmgr update --self
 
 install:
   # Make python venv
