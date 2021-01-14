@@ -52,6 +52,7 @@ before_install:
   #     https://tex.stackexchange.com/questions/398830/how-to-build-my-latex-automatically-using-travis-ci
   - |
     if [ "$TRAVIS_OS_NAME" = "osx" ]; then
+      brew update && brew upgrade
       brew install --cask mactex
     elif [ "$TRAVIS_OS_NAME" = "linux" ]; then
       sudo apt-get install texlive
