@@ -11,7 +11,7 @@ language: bash
 
 os:
   - osx
-  - linux
+  # - linux
 
 env:
   global:
