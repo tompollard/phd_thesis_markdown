@@ -9,7 +9,9 @@ branches:
 # Set the language
 language: bash
 
-os: osx
+os:
+  - osx
+  - linux
 
 env:
   global:
@@ -24,9 +26,14 @@ python:
   # - "3.7"
   # - "3.8"
 
-install:
+before_install:
   # We do this conditionally because it saves us some downloading if the
   # version is the same.
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then
+      OS_NAME=MacOSX
+    elif [ "$TRAVIS_OS_NAME" = "linux" ]; then
+      OS_NAME=Linux
+    fi
   - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
       wget https://repo.continuum.io/miniconda/Miniconda2-latest-MacOSX-x86_64.sh -O miniconda.sh;
     else
@@ -39,12 +46,20 @@ install:
   - conda update -q conda
   # Useful for debugging any issues with conda
   - conda info -a
+  # The install of mactex takes a long time: ~20mins
+  # investigate using a docker image to save time?:
+  #     https://tex.stackexchange.com/questions/398830/how-to-build-my-latex-automatically-using-travis-ci
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then
+      brew install --cask mactex
+    elif [ "$TRAVIS_OS_NAME" = "linux" ]; then
+      apt-get install texlive
+    fi
+  - sudo tlmgr update --self
+
+install:
   # Make python venv
   - conda create -n phd python=${PYTHON_VERSION} pandoc
   - conda activate phd
-  # The install of mactex takes a long time
-  - brew install --cask mactex
-  - sudo tlmgr update --self
   # Installs both python and texlive dependencies
   - make install
   # Info
