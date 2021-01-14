@@ -11,7 +11,7 @@ language: bash
 
 os:
   - osx
-  # - linux
+  - linux
 
 env:
   global:
@@ -25,6 +25,16 @@ python:
   - "3.6"
   - "3.7"
   - "3.8"
+
+addons:
+  apt:
+    packages:
+    - texlive
+    update: true
+  homebrew:
+    casks:
+    - mactex
+    update: true
 
 before_install:
   # Install conda
@@ -50,14 +60,16 @@ before_install:
   # The install of mactex...takes a long time: ~20mins
   # investigate using a docker image to save time?:
   #     https://tex.stackexchange.com/questions/398830/how-to-build-my-latex-automatically-using-travis-ci
-  - |
-    if [ "$TRAVIS_OS_NAME" = "osx" ]; then
-      brew update && brew upgrade
-      brew install --cask mactex
-      sudo tlmgr update --self
-    elif [ "$TRAVIS_OS_NAME" = "linux" ]; then
-      sudo apt-get install texlive
-    fi
+  # This is now done in the 'addons:' travis config above
+  # - |
+  #   if [ "$TRAVIS_OS_NAME" = "osx" ]; then
+  #     brew update && brew upgrade
+  #     brew install --cask mactex
+  #     sudo tlmgr update --self
+  #   elif [ "$TRAVIS_OS_NAME" = "linux" ]; then
+  #     sudo apt-get install texlive
+  #   fi
+  - sudo tlmgr update --self
 
 install:
   # Make python venv
@@ -65,7 +77,6 @@ install:
   - conda activate phd
   # Installs both python and texlive dependencies
   - make install
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then sudo tlmgr update --self; fi
   # Info
   - conda list
   - pip list
