@@ -13,6 +13,11 @@ os:
   - osx
   - linux
 
+env:
+  global:
+    - PATH=$TRAVIS_BUILD_DIR/usr/bin/:$PATH
+    - PATH=/Library/TeX/texbin:$PATH
+
 python:
   # We don't actually use the Travis Python, but this keeps it organized.
   # - "2.7"
