@@ -20,9 +20,9 @@ python:
   # We don't actually use the Travis Python, but this keeps it organized.
   # - "2.7"
   # - "3.5"
-  # - "3.6"
-  - "3.7"
-  - "3.8"
+  - "3.6"
+  # - "3.7"
+  # - "3.8"
 
 install:
   # We do this conditionally because it saves us some downloading if the
@@ -47,12 +47,24 @@ install:
   - sudo tlmgr update --self
   # Installs both python and texlive dependencies
   - make install
+  # Info
+  - conda list
+  - pip list
+  - python --version
+  - pandoc --version
+  - tlmgr --version
+  - latex --version
 
 # Attempt to create all document output types
 script:
   - make help
-  - make all
-  - cat pandoc.pdf.log
+  - make tex
   - cat pandoc.tex.log
+  - make pdf
+  - cat pandoc.pdf.log
+  - make html
   - cat pandoc.html.log
+  - make docx
   - cat pandoc.docx.log
+  - make all
+  - cat pandoc.*.log
