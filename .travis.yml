@@ -13,11 +13,6 @@ os:
   - osx
   - linux
 
-env:
-  global:
-    - PATH=$TRAVIS_BUILD_DIR/usr/bin/:$PATH
-    - PATH=/Library/TeX/texbin:$PATH
-
 python:
   # We don't actually use the Travis Python, but this keeps it organized.
   # - "2.7"
@@ -27,8 +22,7 @@ python:
   # - "3.8"
 
 before_install:
-  # We do this conditionally because it saves us some downloading if the
-  # version is the same.
+  # Install conda
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then
       OS_NAME=MacOSX
     elif [ "$TRAVIS_OS_NAME" = "linux" ]; then
@@ -46,7 +40,7 @@ before_install:
   - conda update -q conda
   # Useful for debugging any issues with conda
   - conda info -a
-  # The install of mactex takes a long time: ~20mins
+  # The install of mactex...takes a long time: ~20mins
   # investigate using a docker image to save time?:
   #     https://tex.stackexchange.com/questions/398830/how-to-build-my-latex-automatically-using-travis-ci
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then
