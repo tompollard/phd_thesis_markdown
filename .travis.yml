@@ -64,6 +64,7 @@ install:
   - conda activate phd
   # Installs both python and texlive dependencies
   - make install
+  - sudo tlmgr update --self
   # Info
   - conda list
   - pip list
