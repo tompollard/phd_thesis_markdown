@@ -54,7 +54,7 @@ before_install:
     if [ "$TRAVIS_OS_NAME" = "osx" ]; then
       brew install --cask mactex
     elif [ "$TRAVIS_OS_NAME" = "linux" ]; then
-      apt-get install texlive
+      sudo apt-get install texlive
     fi
   - sudo tlmgr update --self
 
