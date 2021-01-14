@@ -66,7 +66,6 @@ before_install:
   - conda update -q conda
   # Useful for debugging any issues with conda
   - conda info -a
-  - 
   # The install of mactex...takes a long time: ~20mins
   # investigate using a docker image to save time?:
   #     https://tex.stackexchange.com/questions/398830/how-to-build-my-latex-automatically-using-travis-ci
@@ -101,6 +100,8 @@ script:
   - cat pandoc.tex.log
   - make pdf
   - cat pandoc.pdf.log
+  # Debugging the mac error
+  - find /usr/local/texlive/2020/ -type f -name "l3backend*"
   - make html
   - cat pandoc.html.log
   - make docx
