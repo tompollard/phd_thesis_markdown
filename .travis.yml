@@ -37,7 +37,15 @@ addons:
     update: true
 
 before_install:
-  - sudo tlmgr update --self
+  - |
+    - |
+    if [ "$TRAVIS_OS_NAME" = "osx" ]; then
+      sudo tlmgr update --self
+    elif [ "$TRAVIS_OS_NAME" = "linux" ]; then
+      echo on linux we cannot update apt installed texlive c.f.
+      echo https://tex.stackexchange.com/questions/551383/cant-run-tex-lives-tlmgr-in-a-github-action
+      echo https://tex.stackexchange.com/questions/1092/how-to-install-vanilla-texlive-on-debian-or-ubuntu
+    fi
   # Install conda
   - |
     if [ "$TRAVIS_OS_NAME" = "osx" ]; then
