@@ -54,10 +54,10 @@ before_install:
     if [ "$TRAVIS_OS_NAME" = "osx" ]; then
       brew update && brew upgrade
       brew install --cask mactex
+      sudo tlmgr update --self
     elif [ "$TRAVIS_OS_NAME" = "linux" ]; then
       sudo apt-get install texlive
     fi
-  - sudo tlmgr update --self
 
 install:
   # Make python venv
@@ -65,7 +65,7 @@ install:
   - conda activate phd
   # Installs both python and texlive dependencies
   - make install
-  - sudo tlmgr update --self
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then sudo tlmgr update --self; fi
   # Info
   - conda list
   - pip list
