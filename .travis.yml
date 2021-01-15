@@ -30,6 +30,7 @@ addons:
   apt:
     packages:
     - texlive
+    - xzdec
     update: true
   homebrew:
     casks:
