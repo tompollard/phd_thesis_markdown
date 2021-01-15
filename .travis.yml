@@ -35,7 +35,7 @@ addons:
   homebrew:
     casks:
     - mactex
-    update: true
+    # update: true
 
 before_install:
   # For debug
