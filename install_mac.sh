@@ -10,4 +10,5 @@ sudo tlmgr install threeparttable &&
 sudo tlmgr update l3packages &&
 sudo tlmgr update l3kernel &&
 sudo tlmgr update l3experimental &&
+sudo tlmgr update l3backend &&
 pip install pandoc-fignos pandoc-eqnos pandoc-tablenos pandoc-secnos pandoc-shortcaption
