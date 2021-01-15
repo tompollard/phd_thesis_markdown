@@ -31,7 +31,7 @@ addons:
     packages:
     - texlive
     - xzdec
-    update: true
+    # update: true
   homebrew:
     casks:
     - mactex
