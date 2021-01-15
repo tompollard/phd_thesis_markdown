@@ -11,7 +11,7 @@ language: bash
 
 os:
   - osx
-  - linux
+  # - linux  # https://tex.stackexchange.com/questions/313768/why-getting-this-error-tlmgr-unknown-directive
 
 env:
   global:
