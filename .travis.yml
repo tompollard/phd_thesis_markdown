@@ -31,11 +31,11 @@ addons:
     packages:
     - texlive
     - xzdec
-    # update: true
+    update: true
   homebrew:
     casks:
     - mactex
-    # update: true
+    update: true
 
 before_install:
   # For debug
