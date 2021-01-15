@@ -68,15 +68,40 @@ There are some minor annoyances:
     - Pandoc plugins by running ```make install```
     - Git, for version control.
 2. [Fork the repository](https://github.com/tompollard/phd_thesis_markdown/fork) on Github  
-3. Clone the repository onto your local computer (or [download the Zip file](https://github.com/tompollard/phd_thesis_markdown/archive/master.zip)).  
-4. Navigate to the directory that contains the Makefile and type "make pdf" (or "make html") at the command line to update the PDF (or HTML) in the output directory.  
+3. Clone the repository onto your local computer (or [download the Zip file](https://github.com/tompollard/phd_thesis_markdown/archive/master.zip)).
+4. (Skip this step to use default UCL style) Configure style for your institution - see instructions below
+5. Navigate to the directory that contains the Makefile and type "make pdf" (or "make html") at the command line to update the PDF (or HTML) in the output directory.  
 **In case of an error** (e.g. `make: *** [pdf] Error 43`), consult [this article](https://dalwilliams.info/lessons-learned-from-writing-a-phd-dissertation-in-markdown.html) for possible fixes. Most importantly, make sure tlmgr is properly installed, then run ```install.sh``
-    
-5. Edit the files in the 'source' directory, then goto step 4.  
+6. Edit the files in the 'source' directory, then goto step 5.
+
+## How does it work?
+The universal document converter [`pandoc`](https://pandoc.org/) does all the heavy lifting. For example:
+
+1. `make pdf` (the code under `pdf:` in `Makefile`) runs `pandoc` which takes as input
+    1. the markdown files which contain the writing content: `input/*.md`
+    1. a yaml file with metadata: `input/metadata.yml`
+    1. a latex template: `style/template.tex`
+    1. a latex header: `style/preable.tex`
+    1. a csl style file for citations: `style/ref_format.csl`
+    1. a bunch of options which change the output e.g. `--number-sections`
+1. the output produced is:
+    1. the generated pdf: `output/thesis.pdf`
+    1. logs (which contain the `.tex` which was compiled): `pandoc.pdf.log`    
+
+Put simply, `pandoc` uses the latex template provided to create a `.tex` file, then compiles it. In detail, `pandoc` processes the input files in the following way (the file names in quotes aren't visible to you, but are named for the purpose of understanding):
+1. Create "`body.tex`" by:
+    * converting all the `*.md` files **in the order that they were recieved** in the `pandoc` call
+1. Create a "`thesis.tex`" from `style/template.tex` by runing code wrapped in `$` signs. The important things to note are:
+    1. this populates `style/template.tex` with metadata from `input/metadata.yml` and the arguments from the `pandoc` call
+    1. "`body.tex`" is pasted in verbatim in place of `$body$`
+1. Paste `style/preable.tex` verbatim at the top of `main.tex`
+1. Compile "`thesis.tex`" (you can see the logs for this process, and what "`main.tex`" would look like in `pandoc.pdf.log`)
+    1. You can also look at "`thesis.tex`" by running `make tex` - this follows all the above steps bar the compilation
 
 ## What else do I need to know?
 
 Some useful points, in a random order:
+- the markdown files you write (i.e. your chapters) will be compliled in alphabetial order, so keep the filenames sorted in the order you want them to appear e.g. `01_chapeter_1.md`, `02_chapter_2.md`, etc. This is required because of the way we have written `make pdf`. You can change this behaviour by writing a custom `pandoc` command instead of using `make pdf`.
 - each chapter must finish with at least one blank line, otherwise the header of the following chapter may not be picked up.
 - add two spaces at the end of a line to force a line break.
 - the template uses [John Macfarlane's Pandoc](http://johnmacfarlane.net/pandoc/README.html) to generate the output documents. Refer to this page for Markdown formatting guidelines.
