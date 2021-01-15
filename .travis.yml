@@ -38,7 +38,6 @@ addons:
 
 before_install:
   - |
-    - |
     if [ "$TRAVIS_OS_NAME" = "osx" ]; then
       sudo tlmgr update --self
     elif [ "$TRAVIS_OS_NAME" = "linux" ]; then
