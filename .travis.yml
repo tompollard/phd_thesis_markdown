@@ -38,6 +38,8 @@ addons:
     update: true
 
 before_install:
+  # For debug
+  - echo $PATH
   - |
     if [ "$TRAVIS_OS_NAME" = "osx" ];
       eval "$(/usr/libexec/path_helper)"
@@ -80,6 +82,8 @@ before_install:
   #   elif [ "$TRAVIS_OS_NAME" = "linux" ]; then
   #     sudo apt-get install texlive
   #   fi
+  # For debug
+  - echo $PATH
 
 install:
   # Make python venv
