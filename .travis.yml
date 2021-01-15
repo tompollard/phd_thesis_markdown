@@ -95,6 +95,7 @@ install:
   # Installs both python and texlive dependencies
   - make install
   # For debug
+  - cat /usr/local/texlive/2020/texmf-var/web2c/tlmgr.log
   - conda list
   - pip list
   - python --version
@@ -108,6 +109,7 @@ install:
 
 # Attempt to create all document output types
 script:
+  - echo ========================== beginning testing script ==========================
   - make help
   - make tex
   - cat pandoc.tex.log
