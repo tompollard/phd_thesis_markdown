@@ -236,7 +236,8 @@
                 <ul>
                 <li><a href="#introduction"><span class="toc-section-number">2.1</span> Introduction</a></li>
                 <li><a href="#the-middle"><span class="toc-section-number">2.2</span> The middle</a></li>
-                <li><a href="#conclusion"><span class="toc-section-number">2.3</span> Conclusion</a></li>
+                <li><a href="#a-complicated-math-equation"><span class="toc-section-number">2.3</span> A complicated math equation</a></li>
+                <li><a href="#conclusion"><span class="toc-section-number">2.4</span> Conclusion</a></li>
                 </ul></li>
                 <li><a href="#first-research-study-with-code"><span class="toc-section-number">3</span> First research study, with code</a>
                 <ul>
@@ -334,7 +335,7 @@
                                 For bold, add ** on either side of the text
                                 For bold and italic, add _** on either side of the text
                                 -->
-                                <p>This is a brief outline of what went into each chapter, and a section which shows how to reference headers (which are labelled automatically for you). <strong>Chapter </strong> shows how to use citations and how to reference section headers. <strong>Chapter </strong> shows how use and reference equations. <strong>Chapter </strong> shows how to use and reference code. <strong>Chapter </strong> shows how to use, reference, and resize pdf and jpg figures. <strong>Chapter </strong> shows how to use and reference tables. <strong>Chapter </strong> is truly revolutionary (but shows nothing functional). <strong>Appendix </strong> shows how to add chapters which are not numbered, as does <strong>Appendix </strong>. See the base <a href="https://github.com/tompollard/phd_thesis_markdown/blob/master/README.md"><code>README.md</code></a> for how References are handled - leave <code>*_references.md</code> alone, and provide it to <code>pandoc</code> last.</p>
+                                <p>This is a brief outline of what went into each chapter, and a section which shows how to reference headers (which are labelled automatically for you). <strong><a href="#introduction-with-a-citation">Chapter 1</a></strong> shows how to use citations and how to reference section headers. <strong><a href="#literature-review-with-maths">Chapter 2</a></strong> shows how use and reference equations. <strong><a href="#first-research-study-with-code">Chapter 3</a></strong> shows how to use and reference code. <strong><a href="#research-containing-a-figure">Chapter 4</a></strong> shows how to use, reference, and resize pdf and jpg figures. <strong><a href="#research-containing-a-table">Chapter 5</a></strong> shows how to use and reference tables. <strong><a href="#final-research-study">Chapter 6</a></strong> is truly revolutionary (but shows nothing functional). <strong><a href="#appendix-1-some-extra-stuff">Appendix 1</a></strong> shows how to add chapters which are not numbered, as does <strong><a href="#appendix-2-some-more-extra-stuff">Appendix 2</a></strong>. See the base <a href="https://github.com/tompollard/phd_thesis_markdown/blob/master/README.md"><code>README.md</code></a> for how References are handled - leave <code>*_references.md</code> alone, and provide it to <code>pandoc</code> last.</p>
                                 <p>Proin faucibus nibh sit amet augue blandit varius.</p>
                                 <h1 data-number="2" id="literature-review-with-maths"><span class="header-section-number">2</span> Literature review, with maths</h1>
                                 <!--
@@ -348,8 +349,16 @@
                                 <p>This is the literature review. Nullam quam odio, volutpat ac ornare quis, vestibulum nec nulla. Aenean nec dapibus in mL/min<sup>-1</sup>. Mathematical formula can be inserted using Latex and can be automatically numbered:</p>
                                 <p><span id="eq:my_equation" class="eqnos"><span class="math inline"><em>f</em>(<em>x</em>) = <em>a</em><em>x</em><sup>3</sup> + <em>b</em><em>x</em><sup>2</sup> + <em>c</em><em>x</em> + <em>d</em></span><span class="eqnos-number">(1)</span></span> </p>
                                 <p>Nunc eleifend, ex a luctus porttitor, felis ex suscipit tellus, ut sollicitudin sapien purus in libero. Nulla blandit eget urna vel tempus. Praesent fringilla dui sapien, sit amet egestas leo sollicitudin at.</p>
-                                <p>Later on in the text, you can reference Equation  and its mind-blowing ramifications. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed faucibus pulvinar volutpat. Ut semper fringilla erat non dapibus. Nunc vitae felis eget purus placerat finibus laoreet ut nibh.</p>
-                                <h2 data-number="2.3" id="conclusion"><span class="header-section-number">2.3</span> Conclusion</h2>
+                                <p>Later on in the text, you can reference Equation <a href="#eq:my_equation">1</a> and its mind-blowing ramifications. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed faucibus pulvinar volutpat. Ut semper fringilla erat non dapibus. Nunc vitae felis eget purus placerat finibus laoreet ut nibh.</p>
+                                <h2 data-number="2.3" id="a-complicated-math-equation"><span class="header-section-number">2.3</span> A complicated math equation</h2>
+                                <p>The following raw text in markdown behind Equation <a href="#eq:my_complicated_equation">2</a> shows that you can fall back on if it is more convenient for you. Note that this will only be rendered in <code>thesis.pdf</code></p>
+                                <p><span id="eq:my_complicated_equation" class="eqnos"><span class="math display">$$
+                                \begin{aligned}
+                                    \hat{\theta}_g = \argmin_{\theta_g} \Big\{ - &amp;\sum^{N}_{n=1}\Big( 1-\mathbb{1}[f(\pmb x^{(n)})]\Big)\log f\Big(\pmb x^{(n)} \\ 
+                                    &amp;+ g(\pmb x^{(n)};\theta_g)\Big) + \lambda|g(\pmb x^{(n)};\theta_g)|_2 \Big\} \ ,
+                                \end{aligned}
+                                $$</span><span class="eqnos-number">(2)</span></span> </p>
+                                <h2 data-number="2.4" id="conclusion"><span class="header-section-number">2.4</span> Conclusion</h2>
                                 <p>This is the conclusion. Donec pulvinar molestie urna eu faucibus. In tristique ut neque vel eleifend. Morbi ut massa vitae diam gravida iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                                 <!-- Insert an unordered list -->
                                 <ul>
@@ -369,7 +378,7 @@
                                 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> mood <span class="op">==</span> <span class="st">&#39;happy&#39;</span>:</span>
                                 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;I am a happy robot&quot;</span>)</span></code></pre></div>
                                 <h3 data-number="3.2.2" id="subsection-2"><span class="header-section-number">3.2.2</span> Subsection 2</h3>
-                                <p>By running the code in Section , we solved AI completely. This is the second part of the methodology. Proin tincidunt odio non sem mollis tristique. Fusce pharetra accumsan volutpat. In nec mauris vel orci rutrum dapibus nec ac nibh. Praesent malesuada sagittis nulla, eget commodo mauris ultricies eget. Suspendisse iaculis finibus ligula.</p>
+                                <p>By running the code in <a href="#subsection-1-with-example-code-block">Section Subsection 1 with example code block</a>, we solved AI completely. This is the second part of the methodology. Proin tincidunt odio non sem mollis tristique. Fusce pharetra accumsan volutpat. In nec mauris vel orci rutrum dapibus nec ac nibh. Praesent malesuada sagittis nulla, eget commodo mauris ultricies eget. Suspendisse iaculis finibus ligula.</p>
                                 <!-- 
                                 Comments can be added like this.
                                 -->

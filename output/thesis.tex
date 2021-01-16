@@ -288,6 +288,10 @@
 \usepackage{graphicx}
 \usepackage{rotating}
 
+% Custom math
+\usepackage{bbold}
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+
 \begin{document}
 
 
@@ -474,19 +478,23 @@ tempus non risus. Suspendisse ut felis mi.
 
 This is a brief outline of what went into each chapter, and a section
 which shows how to reference headers (which are labelled automatically
-for you). \textbf{Chapter \ref{introduction-with-a-citation}} shows how
-to use citations and how to reference section headers. \textbf{Chapter
-\ref{literature-review-with-maths}} shows how use and reference
-equations. \textbf{Chapter \ref{first-research-study-with-code}} shows
-how to use and reference code. \textbf{Chapter
-\ref{research-containing-a-figure}} shows how to use, reference, and
-resize pdf and jpg figures. \textbf{Chapter
-\ref{research-containing-a-table}} shows how to use and reference
-tables. \textbf{Chapter \ref{final-research-study}} is truly
-revolutionary (but shows nothing functional). \textbf{Appendix
-\ref{appendix-1-some-extra-stuff}} shows how to add chapters which are
-not numbered, as does \textbf{Appendix
-\ref{appendix-2-some-more-extra-stuff}}. See the base
+for you).
+\textbf{\protect\hyperlink{introduction-with-a-citation}{Chapter 1}}
+shows how to use citations and how to reference section headers.
+\textbf{\protect\hyperlink{literature-review-with-maths}{Chapter 2}}
+shows how use and reference equations.
+\textbf{\protect\hyperlink{first-research-study-with-code}{Chapter 3}}
+shows how to use and reference code.
+\textbf{\protect\hyperlink{research-containing-a-figure}{Chapter 4}}
+shows how to use, reference, and resize pdf and jpg figures.
+\textbf{\protect\hyperlink{research-containing-a-table}{Chapter 5}}
+shows how to use and reference tables.
+\textbf{\protect\hyperlink{final-research-study}{Chapter 6}} is truly
+revolutionary (but shows nothing functional).
+\textbf{\protect\hyperlink{appendix-1-some-extra-stuff}{Appendix 1}}
+shows how to add chapters which are not numbered, as does
+\textbf{\protect\hyperlink{appendix-2-some-more-extra-stuff}{Appendix
+2}}. See the base
 \href{https://github.com/tompollard/phd_thesis_markdown/blob/master/README.md}{\texttt{README.md}}
 for how References are handled - leave \texttt{*\_references.md} alone,
 and provide it to \texttt{pandoc} last.
@@ -525,6 +533,22 @@ and its mind-blowing ramifications. Pellentesque habitant morbi
 tristique senectus et netus et malesuada fames ac turpis egestas. Sed
 faucibus pulvinar volutpat. Ut semper fringilla erat non dapibus. Nunc
 vitae felis eget purus placerat finibus laoreet ut nibh.
+
+\hypertarget{a-complicated-math-equation}{%
+\section{A complicated math
+equation}\label{a-complicated-math-equation}}
+
+The following raw text in markdown behind Equation
+\ref{eq:my_complicated_equation} shows that you can fall back on
+\LaTeX if it is more convenient for you. Note that this will only be
+rendered in \texttt{thesis.pdf}
+
+\begin{equation}
+\begin{aligned}
+    \hat{\theta}_g = \argmin_{\theta_g} \Big\{ - &\sum^{N}_{n=1}\Big( 1-\mathbb{1}[f(\pmb x^{(n)})]\Big)\log f\Big(\pmb x^{(n)} \\ 
+    &+ g(\pmb x^{(n)};\theta_g)\Big) + \lambda|g(\pmb x^{(n)};\theta_g)|_2 \Big\} \ ,
+\end{aligned}
+\label{eq:my_complicated_equation}\end{equation}
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
@@ -589,11 +613,12 @@ before and after a code block:
 \hypertarget{subsection-2}{%
 \subsection{Subsection 2}\label{subsection-2}}
 
-By running the code in Section
-\ref{subsection-1-with-example-code-block}, we solved AI completely.
-This is the second part of the methodology. Proin tincidunt odio non sem
-mollis tristique. Fusce pharetra accumsan volutpat. In nec mauris vel
-orci rutrum dapibus nec ac nibh. Praesent malesuada sagittis nulla, eget
+By running the code in
+\protect\hyperlink{subsection-1-with-example-code-block}{Section
+Subsection 1 with example code block}, we solved AI completely. This is
+the second part of the methodology. Proin tincidunt odio non sem mollis
+tristique. Fusce pharetra accumsan volutpat. In nec mauris vel orci
+rutrum dapibus nec ac nibh. Praesent malesuada sagittis nulla, eget
 commodo mauris ultricies eget. Suspendisse iaculis finibus ligula.
 
 \hypertarget{results}{%
