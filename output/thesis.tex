@@ -292,6 +292,9 @@
 \usepackage{bbold}
 \DeclareMathOperator*{\argmin}{\arg\!\min}
 
+% For use of \cref and \Cref used by pandoc secnos
+\usepackage{cleveref}
+
 \begin{document}
 
 
@@ -478,21 +481,18 @@ tempus non risus. Suspendisse ut felis mi.
 
 This is a brief outline of what went into each chapter, and a section
 which shows how to reference headers (which are labelled automatically
-for you).
-\textbf{\protect\hyperlink{introduction-with-a-citation}{Chapter 1}}
-shows how to use citations and how to reference section headers.
-\textbf{\protect\hyperlink{literature-review-with-maths}{Chapter 2}}
-shows how use and reference equations.
-\textbf{\protect\hyperlink{first-research-study-with-code}{Chapter 3}}
-shows how to use and reference code.
-\textbf{\protect\hyperlink{research-containing-a-figure}{Chapter 4}}
-shows how to use, reference, and resize pdf and jpg figures.
-\textbf{\protect\hyperlink{research-containing-a-table}{Chapter 5}}
-shows how to use and reference tables.
-\textbf{\protect\hyperlink{final-research-study}{Chapter 6}} is truly
-revolutionary (but shows nothing functional).
+for you). This chapter, \cref{introduction-with-a-citation}, shows how
+to use citations and how to reference section headers.
+\Cref{literature-review-with-maths} shows how use and reference
+equations. \Cref{first-research-study-with-code} shows how to use and
+reference code. \Cref{research-containing-a-figure} shows how to use,
+reference, and resize pdf and jpg figures.
+\Cref{research-containing-a-table} shows how to use and reference
+tables. \Cref{final-research-study} is truly revolutionary (but shows
+nothing functional).
 \textbf{\protect\hyperlink{appendix-1-some-extra-stuff}{Appendix 1}}
-shows how to add chapters which are not numbered, as does
+shows how to add chapters which are not numbered, and has to be
+referenced manually, as does
 \textbf{\protect\hyperlink{appendix-2-some-more-extra-stuff}{Appendix
 2}}. See the base
 \href{https://github.com/tompollard/phd_thesis_markdown/blob/master/README.md}{\texttt{README.md}}
@@ -613,13 +613,12 @@ before and after a code block:
 \hypertarget{subsection-2}{%
 \subsection{Subsection 2}\label{subsection-2}}
 
-By running the code in
-\protect\hyperlink{subsection-1-with-example-code-block}{Section
-Subsection 1 with example code block}, we solved AI completely. This is
-the second part of the methodology. Proin tincidunt odio non sem mollis
-tristique. Fusce pharetra accumsan volutpat. In nec mauris vel orci
-rutrum dapibus nec ac nibh. Praesent malesuada sagittis nulla, eget
-commodo mauris ultricies eget. Suspendisse iaculis finibus ligula.
+By running the code in \cref{subsection-1-with-example-code-block}, we
+solved AI completely. This is the second part of the methodology. Proin
+tincidunt odio non sem mollis tristique. Fusce pharetra accumsan
+volutpat. In nec mauris vel orci rutrum dapibus nec ac nibh. Praesent
+malesuada sagittis nulla, eget commodo mauris ultricies eget.
+Suspendisse iaculis finibus ligula.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}

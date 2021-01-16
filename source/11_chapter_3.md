@@ -22,7 +22,7 @@ if mood == 'happy':
 
 ### Subsection 2
 
-By running the code in [Section Subsection 1 with example code block](#subsection-1-with-example-code-block), we solved AI completely. This is the second part of the methodology. Proin tincidunt odio non sem mollis tristique. Fusce pharetra accumsan volutpat. In nec mauris vel orci rutrum dapibus nec ac nibh. Praesent malesuada sagittis nulla, eget commodo mauris ultricies eget. Suspendisse iaculis finibus ligula.
+By running the code in +@sec:subsection-1-with-example-code-block, we solved AI completely. This is the second part of the methodology. Proin tincidunt odio non sem mollis tristique. Fusce pharetra accumsan volutpat. In nec mauris vel orci rutrum dapibus nec ac nibh. Praesent malesuada sagittis nulla, eget commodo mauris ultricies eget. Suspendisse iaculis finibus ligula.
 
 <!-- 
 Comments can be added like this.
