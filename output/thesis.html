@@ -236,7 +236,8 @@
                 <ul>
                 <li><a href="#introduction"><span class="toc-section-number">2.1</span> Introduction</a></li>
                 <li><a href="#the-middle"><span class="toc-section-number">2.2</span> The middle</a></li>
-                <li><a href="#conclusion"><span class="toc-section-number">2.3</span> Conclusion</a></li>
+                <li><a href="#a-complicated-math-equation"><span class="toc-section-number">2.3</span> A complicated math equation</a></li>
+                <li><a href="#conclusion"><span class="toc-section-number">2.4</span> Conclusion</a></li>
                 </ul></li>
                 <li><a href="#first-research-study-with-code"><span class="toc-section-number">3</span> First research study, with code</a>
                 <ul>
@@ -334,7 +335,8 @@
                                 For bold, add ** on either side of the text
                                 For bold and italic, add _** on either side of the text
                                 -->
-                                <p>This is a brief outline of what went into each chapter. <strong>Chapter 1</strong> gives a background on duis tempus justo quis arcu consectetur sollicitudin. <strong>Chapter 2</strong> discusses morbi sollicitudin gravida tellus in maximus. <strong>Chapter 3</strong> discusses vestibulum eleifend turpis id turpis sollicitudin aliquet. <strong>Chapter 4</strong> shows how phasellus gravida non ex id aliquet. Proin faucibus nibh sit amet augue blandit varius.</p>
+                                <p>This is a brief outline of what went into each chapter, and a section which shows how to reference headers (which are labelled automatically for you). This chapter, section <a href="#introduction-with-a-citation">1</a>, shows how to use citations and how to reference section headers. Section <a href="#literature-review-with-maths">2</a> shows how use and reference equations. Section <a href="#first-research-study-with-code">3</a> shows how to use and reference code. Section <a href="#research-containing-a-figure">4</a> shows how to use, reference, and resize pdf and jpg figures. Section <a href="#research-containing-a-table">5</a> shows how to use and reference tables. Section <a href="#final-research-study">6</a> is truly revolutionary (but shows nothing functional). <strong><a href="#appendix-1-some-extra-stuff">Appendix 1</a></strong> shows how to add chapters which are not numbered, and has to be referenced manually, as does <strong><a href="#appendix-2-some-more-extra-stuff">Appendix 2</a></strong>. See the base <a href="https://github.com/tompollard/phd_thesis_markdown/blob/master/README.md"><code>README.md</code></a> for how References are handled - leave <code>*_references.md</code> alone, and provide it to <code>pandoc</code> last.</p>
+                                <p>Proin faucibus nibh sit amet augue blandit varius.</p>
                                 <h1 data-number="2" id="literature-review-with-maths"><span class="header-section-number">2</span> Literature review, with maths</h1>
                                 <!--
                                 After the introductory chapter, it seems fairly common to 
@@ -347,8 +349,16 @@
                                 <p>This is the literature review. Nullam quam odio, volutpat ac ornare quis, vestibulum nec nulla. Aenean nec dapibus in mL/min<sup>-1</sup>. Mathematical formula can be inserted using Latex and can be automatically numbered:</p>
                                 <p><span id="eq:my_equation" class="eqnos"><span class="math inline"><em>f</em>(<em>x</em>) = <em>a</em><em>x</em><sup>3</sup> + <em>b</em><em>x</em><sup>2</sup> + <em>c</em><em>x</em> + <em>d</em></span><span class="eqnos-number">(1)</span></span> </p>
                                 <p>Nunc eleifend, ex a luctus porttitor, felis ex suscipit tellus, ut sollicitudin sapien purus in libero. Nulla blandit eget urna vel tempus. Praesent fringilla dui sapien, sit amet egestas leo sollicitudin at.</p>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed faucibus pulvinar volutpat. Ut semper fringilla erat non dapibus. Nunc vitae felis eget purus placerat finibus laoreet ut nibh.</p>
-                                <h2 data-number="2.3" id="conclusion"><span class="header-section-number">2.3</span> Conclusion</h2>
+                                <p>Later on in the text, you can reference Equation <a href="#eq:my_equation">1</a> and its mind-blowing ramifications. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed faucibus pulvinar volutpat. Ut semper fringilla erat non dapibus. Nunc vitae felis eget purus placerat finibus laoreet ut nibh.</p>
+                                <h2 data-number="2.3" id="a-complicated-math-equation"><span class="header-section-number">2.3</span> A complicated math equation</h2>
+                                <p>The following raw text in markdown behind Equation <a href="#eq:my_complicated_equation">2</a> shows that you can fall back on if it is more convenient for you. Note that this will only be rendered in <code>thesis.pdf</code></p>
+                                <p><span id="eq:my_complicated_equation" class="eqnos"><span class="math display">$$
+                                \begin{aligned}
+                                    \hat{\theta}_g = \argmin_{\theta_g} \Big\{ - &amp;\sum^{N}_{n=1}\Big( 1-\mathbb{1}[f(\pmb x^{(n)})]\Big)\log f\Big(\pmb x^{(n)} \\ 
+                                    &amp;+ g(\pmb x^{(n)};\theta_g)\Big) + \lambda|g(\pmb x^{(n)};\theta_g)|_2 \Big\} \ ,
+                                \end{aligned}
+                                $$</span><span class="eqnos-number">(2)</span></span> </p>
+                                <h2 data-number="2.4" id="conclusion"><span class="header-section-number">2.4</span> Conclusion</h2>
                                 <p>This is the conclusion. Donec pulvinar molestie urna eu faucibus. In tristique ut neque vel eleifend. Morbi ut massa vitae diam gravida iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                                 <!-- Insert an unordered list -->
                                 <ul>
@@ -364,11 +374,11 @@
                                 <h3 data-number="3.2.1" id="subsection-1-with-example-code-block"><span class="header-section-number">3.2.1</span> Subsection 1 with example code block</h3>
                                 <p>This is the first part of the methodology. Cras porta dui a dolor tincidunt placerat. Cras scelerisque sem et malesuada vestibulum. Vivamus faucibus ligula ac sodales consectetur. Aliquam vel tristique nisl. Aliquam erat volutpat. Pellentesque iaculis enim sit amet posuere facilisis. Integer egestas quam sit amet nunc maximus, id bibendum ex blandit.</p>
                                 <p>For syntax highlighting in code blocks, add three “`” characters before and after a code block:</p>
-                                <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>mood <span class="op">=</span> <span class="st">&#39;happy&#39;</span></span>
-                                <span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="cf">if</span> mood <span class="op">==</span> <span class="st">&#39;happy&#39;</span>:</span>
-                                <span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;I am a happy robot&quot;</span>)</span></code></pre></div>
+                                <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mood <span class="op">=</span> <span class="st">&#39;happy&#39;</span></span>
+                                <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> mood <span class="op">==</span> <span class="st">&#39;happy&#39;</span>:</span>
+                                <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;I am a happy robot&quot;</span>)</span></code></pre></div>
                                 <h3 data-number="3.2.2" id="subsection-2"><span class="header-section-number">3.2.2</span> Subsection 2</h3>
-                                <p>This is the second part of the methodology. Proin tincidunt odio non sem mollis tristique. Fusce pharetra accumsan volutpat. In nec mauris vel orci rutrum dapibus nec ac nibh. Praesent malesuada sagittis nulla, eget commodo mauris ultricies eget. Suspendisse iaculis finibus ligula.</p>
+                                <p>By running the code in section <a href="#subsection-1-with-example-code-block">3.2.1</a>, we solved AI completely. This is the second part of the methodology. Proin tincidunt odio non sem mollis tristique. Fusce pharetra accumsan volutpat. In nec mauris vel orci rutrum dapibus nec ac nibh. Praesent malesuada sagittis nulla, eget commodo mauris ultricies eget. Suspendisse iaculis finibus ligula.</p>
                                 <!-- 
                                 Comments can be added like this.
                                 -->
@@ -407,7 +417,7 @@
                                 -->
                                 <div id="fig:my_fig" class="fignos">
                                 <figure>
-                                <embed src="source/figures/example_figure.pdf" style="width:100.0%" /><figcaption aria-hidden="true"><span>Figure 1:</span> RV Calypso is a former British Royal Navy minesweeper converted into a research vessel for the oceanographic researcher Jacques-Yves Cousteau. It was equipped with a mobile laboratory for underwater field research.</figcaption>
+                                <embed src="source/figures/example_figure.pdf" style="width:100.0%" /><figcaption aria-hidden="true"><span>Figure 1:</span> RV Calypso is a former British Royal Navy minesweeper converted into a research vessel for the oceanographic researcher Jacques-Yves Cousteau. It was equipped with a mobile laboratory for underwater field research.</figcaption>
                                 </figure>
                                 </div>
                                 <h2 data-number="4.5" id="conclusion-2"><span class="header-section-number">4.5</span> Conclusion</h2>
@@ -417,7 +427,7 @@
                                 -->
                                 <div id="fig:other_fig" class="fignos">
                                 <figure>
-                                <img src="source/figures/full_caption_example.jpg" style="width:100.0%" alt="Figure 2: This is not a boat" /><figcaption aria-hidden="true"><span>Figure 2:</span> This is not a boat</figcaption>
+                                <img src="source/figures/full_caption_example.jpg" style="width:100.0%" alt="Figure 2: This is not a boat" /><figcaption aria-hidden="true"><span>Figure 2:</span> This is not a boat</figcaption>
                                 </figure>
                                 </div>
                                 <h1 data-number="5" id="research-containing-a-table"><span class="header-section-number">5</span> Research containing a table</h1>
@@ -438,7 +448,7 @@
                                 <!-- Force the table onto a newpage -->
                                 <div id="tbl:random" class="tablenos">
                                 <table id="tbl:random">
-                                <caption><span>Table 1:</span> Important data for various land masses. </caption>
+                                <caption><span>Table 1:</span> Important data for various land masses. </caption>
                                 <colgroup>
                                 <col style="width: 15%" />
                                 <col style="width: 9%" />
@@ -536,7 +546,7 @@
                                 </table>
                                 </div>
                                 <h2 data-number="5.4" id="discussion-2"><span class="header-section-number">5.4</span> Discussion</h2>
-                                <p>This is the discussion. Etiam sit amet mi eros. Donec vel nisi sed purus gravida fermentum at quis odio. Vestibulum quis nisl sit amet justo maximus molestie. Maecenas vitae arcu erat. Nulla facilisi. Nam pretium mauris eu enim porttitor, a mattis velit dictum. Nulla sit amet ligula non mauris volutpat fermentum quis vitae sapien.</p>
+                                <p>This is the discussion. As we saw in Table <a href="#tbl:random">1</a>, many things are true, and other things are not. Etiam sit amet mi eros. Donec vel nisi sed purus gravida fermentum at quis odio. Vestibulum quis nisl sit amet justo maximus molestie. Maecenas vitae arcu erat. Nulla facilisi. Nam pretium mauris eu enim porttitor, a mattis velit dictum. Nulla sit amet ligula non mauris volutpat fermentum quis vitae sapien.</p>
                                 <h2 data-number="5.5" id="conclusion-3"><span class="header-section-number">5.5</span> Conclusion</h2>
                                 <p>This is the conclusion to the chapter. Nullam porta tortor id vehicula interdum. Quisque pharetra, neque ut accumsan suscipit, orci orci commodo tortor, ac finibus est turpis eget justo. Cras sodales nibh nec mauris laoreet iaculis. Morbi volutpat orci felis, id condimentum nulla suscipit eu. Fusce in turpis quis ligula tempus scelerisque eget quis odio. Vestibulum et dolor id erat lobortis ullamcorper quis at sem.</p>
                                 <h1 data-number="6" id="final-research-study"><span class="header-section-number">6</span> Final research study</h1>
@@ -585,9 +595,9 @@
                                 ...which you should create using your reference manager.
                                 -->
                                 <h1 class="unnumbered" id="references">References</h1>
-                                <div id="refs" class="references hanging-indent" role="doc-bibliography">
-                                <div id="ref-Cousteau1963">
-                                <p>Cousteau Jacques &amp; Dugan James, 1963. <em>The Living Sea: by Jacques-Yves Cousteau</em>, London: Hamish Hamilton.</p>
+                                <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+                                <div id="ref-Cousteau1963" class="csl-entry" role="doc-biblioentry">
+                                Cousteau Jacques &amp; Dugan James, 1963. <em><span class="nocase">The Living Sea: by Jacques-Yves Cousteau</span></em>, London: Hamish Hamilton.
                                 </div>
                                 </div>
             </body>
