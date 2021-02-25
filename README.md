@@ -24,6 +24,7 @@ conda create -n phd -y python=3.7 pandoc
 conda activate phd
 
 # Install required python and texlive packages
+sudo apt install python3-pip # for Ubuntu
 make install
 ```
 
