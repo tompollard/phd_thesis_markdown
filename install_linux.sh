@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 set -e  # makes the script fail as soon as one command fails
-# alias needed for tlmgr installation on Ubuntu with https://github.com/scottkosty/install-tl-ubuntu
-# alias tlmgr='/opt/texbin/tlmgr'
-# alias sudo='sudo env PATH=$PATH' this must be set to carry out sudo on tlmgr
-# this script must be run with make install and alias tlmgr set before like above
+# texlive installation necessary with: https://github.com/scottkosty/install-tl-ubuntu
+# alias tlmgr='/opt/texbin/tlmgr' to be set in .bashrc file or appropriate
+# sudo env PATH=$PATH' is needed to carry out sudo on tlmgr, which is not installed with apt,
+# see https://github.com/scottkosty/install-tl-ubuntu/issues/13
 
 sudo env PATH=$PATH tlmgr install truncate
 sudo env PATH=$PATH tlmgr install tocloft
