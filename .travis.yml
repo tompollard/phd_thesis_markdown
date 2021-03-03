@@ -11,7 +11,7 @@ language: bash
 
 os:
   - osx
-  # - linux  # https://tex.stackexchange.com/questions/313768/why-getting-this-error-tlmgr-unknown-directive
+  - linux  # https://tex.stackexchange.com/questions/313768/why-getting-this-error-tlmgr-unknown-directive
 
 # env:
   # global:
@@ -29,8 +29,9 @@ python:
 addons:
   apt:
     packages:
-    - texlive
+    # - texlive
     - xzdec
+    - python3-pip
     update: true
   homebrew:
     casks:
@@ -45,7 +46,9 @@ before_install:
       eval "$(/usr/libexec/path_helper)"
       sudo tlmgr update --self
     elif [ "$TRAVIS_OS_NAME" = "linux" ]; then
-      tlmgr init-usertree
+      wget https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubuntu && chmod +x ./install-tl-ubuntu
+      sudo ./install-tl-ubuntu
+      sudo env PATH=$PATH tlmgr update --self
       echo MSG FROM JO:
       echo on linux we cannot update apt installed texlive
       echo next steps to fix see commit msg: https://github.com/tompollard/phd_thesis_markdown/pull/100/commits/85fd9e7ac413a34066b79f1e49b3e1d3efdeac00
