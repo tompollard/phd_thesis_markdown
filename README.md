@@ -31,15 +31,22 @@ make install
 ### Ubuntu
 On Ubuntu, texlive installed with apt is not working, use an installer like below and make sure it is not installed with apt:
 ```bash
-# get texlive
-wget https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubuntu && chmod +x ./install-tl-ubuntu
-sudo ./install-tl-ubuntu
+# get TinyTex and make sure PATH is set
+wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
+PATH="$PATH:$HOME/bin"
+PATH="$PATH:$HOME/.local/bin"
 
 # update tlmgr and packages
 sudo env PATH=$PATH tlmgr update --self
 
 # Install pip
 sudo apt install python3-pip
+
+# Install latest pandoc (apt version too old, needs at least 2.11.*)
+TEMP_DEB="$(mktemp)" &&
+wget -O "$TEMP_DEB" 'https://github.com/jgm/pandoc/releases/download/2.11.4/pandoc-2.11.4-1-amd64.deb' &&
+sudo dpkg -i "$TEMP_DEB"
+rm -f "$TEMP_DEB"
 
 # Install required python and texlive packages
 make install
