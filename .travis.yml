@@ -101,17 +101,17 @@ install:
   # Installs both python and texlive dependencies
   - make install
   # For debug
-  - cat /usr/local/texlive/2020/texmf-var/web2c/tlmgr.log
-  - conda list
-  - pip list
-  - python --version
-  - pandoc --version
-  - tlmgr --version
-  - latex --version
-  - echo $PATH
-  - which tlmgr
-  - which latex
-  - find /usr/local/texlive/2020/ -type f -name "l3backend*"
+  # - cat /usr/local/texlive/2020/texmf-var/web2c/tlmgr.log
+  # - conda list
+  # - pip list
+  # - python --version
+  # - pandoc --version
+  # - tlmgr --version
+  # - latex --version
+  # - echo $PATH
+  # - which tlmgr
+  # - which latex
+  # - find /usr/local/texlive/2020/ -type f -name "l3backend*"
 
 # Attempt to create all document output types
 script:
@@ -122,10 +122,10 @@ script:
   - make pdf
   - cat pandoc.pdf.log
   # Debugging the mac error
-  - find /usr/local/texlive/2020/ -type f -name "l3backend*"
+  # - find /usr/local/texlive/2020/ -type f -name "l3backend*"
   - make html
   - cat pandoc.html.log
   - make docx
-  - cat pandoc.docx.log
+  # - cat pandoc.docx.log
   - make all
-  - cat pandoc.*.log
+  # - cat pandoc.*.log
