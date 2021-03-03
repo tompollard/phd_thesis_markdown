@@ -31,6 +31,8 @@ sudo env PATH=$PATH tlmgr install ulem
 sudo env PATH=$PATH tlmgr install setspace
 sudo env PATH=$PATH tlmgr install makecell
 sudo env PATH=$PATH tlmgr install pdflscape
+sudo env PATH=$PATH tlmgr install caption
+
 #
 # Would it be simpler to just update all packages? (takes ~10m)
 # sudo tlmgr update --all
