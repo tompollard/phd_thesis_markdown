@@ -26,6 +26,11 @@ sudo env PATH=$PATH tlmgr install listings
 sudo env PATH=$PATH tlmgr install pdfpages
 sudo env PATH=$PATH tlmgr install bbold
 sudo env PATH=$PATH tlmgr install cleveref
+sudo env PATH=$PATH tlmgr install fancyhdr
+sudo env PATH=$PATH tlmgr install ulem
+sudo env PATH=$PATH tlmgr install setspace
+sudo env PATH=$PATH tlmgr install makecell
+sudo env PATH=$PATH tlmgr install pdflscape
 #
 # Would it be simpler to just update all packages? (takes ~10m)
 # sudo tlmgr update --all
