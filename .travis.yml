@@ -13,10 +13,12 @@ os:
   - osx
   - linux  # https://tex.stackexchange.com/questions/313768/why-getting-this-error-tlmgr-unknown-directive
 
-# env:
-  # global:
+env:
+  global:
     # - PATH=$TRAVIS_BUILD_DIR/usr/bin/:$PATH
     # - PATH=/Library/TeX/texbin:$PATH
+    - PATH="$PATH:$HOME/bin"
+    - PATH="$PATH:$HOME/.local/bin"
 
 python:
   # We don't actually use the Travis Python, but this keeps it organized.
@@ -46,9 +48,10 @@ before_install:
       eval "$(/usr/libexec/path_helper)"
       sudo tlmgr update --self
     elif [ "$TRAVIS_OS_NAME" = "linux" ]; then
-      wget https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubuntu && chmod +x ./install-tl-ubuntu
-      sudo ./install-tl-ubuntu
+      wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
       sudo env PATH=$PATH tlmgr update --self
+      TEMP_DEB="$(mktemp)" && wget -O "$TEMP_DEB" 'https://github.com/jgm/pandoc/releases/download/2.11.4/pandoc-2.11.4-1-amd64.deb' && sudo dpkg -i "$TEMP_DEB"
+      rm -f "$TEMP_DEB"
       echo MSG FROM JO:
       echo on linux we cannot update apt installed texlive
       echo next steps to fix see commit msg: https://github.com/tompollard/phd_thesis_markdown/pull/100/commits/85fd9e7ac413a34066b79f1e49b3e1d3efdeac00
