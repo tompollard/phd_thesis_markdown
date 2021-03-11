@@ -14,9 +14,9 @@ This is the first part of the methodology. Cras porta dui a dolor tincidunt plac
 
 For syntax highlighting in code blocks, add three "`" characters before and after a code block:
 
-```python
+```
 mood = 'happy'
-if mood == 'happy':
+    if mood == 'happy':
     print("I am a happy robot")
 ```
 

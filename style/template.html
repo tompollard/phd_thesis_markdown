@@ -25,11 +25,18 @@
             <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
         $endfor$
         $if(math)$
-            $math$
+            $math$ 
         $endif$
         $for(header-includes)$
             $header-includes$
         $endfor$
+        
+        <!-- Prismjs code highlighting -->
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-c.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-julia.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
         <script src="js/jquery.js"></script>
         <script src="js/diff.js"></script>
         <script src="js/main.js"></script>

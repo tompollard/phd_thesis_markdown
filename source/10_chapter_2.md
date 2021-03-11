@@ -14,7 +14,7 @@ This is the introduction. Duis in neque felis. In hac habitasse platea dictumst.
 
 This is the literature review. Nullam quam odio, volutpat ac ornare quis, vestibulum nec nulla. Aenean nec dapibus in mL/min^-1^. Mathematical formula can be inserted using Latex and can be automatically numbered:
  
-$f(x) = ax^3 + bx^2 + cx + d$ {#eq:my_equation}
+$$f(x) = ax^3 + bx^2 + cx + d$$ {#eq:my_equation}
 
 Nunc eleifend, ex a luctus porttitor, felis ex suscipit tellus, ut sollicitudin sapien purus in libero. Nulla blandit eget urna vel tempus. Praesent fringilla dui sapien, sit amet egestas leo sollicitudin at.  
 
@@ -23,12 +23,10 @@ Later on in the text, you can reference Equation {!@eq:my_equation} and its mind
 ## A complicated math equation
 The following raw text in markdown behind Equation {!@eq:my_complicated_equation} shows that you can fall back on \LaTeX if it is more convenient for you. Note that this will only be rendered in `thesis.pdf`
 
-$$
-\begin{aligned}
+$$ \begin{aligned}
     \hat{\theta}_g = \argmin_{\theta_g} \Big\{ - &\sum^{N}_{n=1}\Big( 1-\mathbb{1}[f(\pmb x^{(n)})]\Big)\log f\Big(\pmb x^{(n)} \\ 
-    &+ g(\pmb x^{(n)};\theta_g)\Big) + \lambda|g(\pmb x^{(n)};\theta_g)|_2 \Big\} \ ,
-\end{aligned}
-$$ {#eq:my_complicated_equation}
+    &+ g(\pmb x^{(n)};\theta_g)\Big) + \lambda|g(\pmb x^{(n)};\theta_g)|_2 \Big\} 
+\end{aligned} $$ {#eq:my_complicated_equation}
 
 
 ## Conclusion

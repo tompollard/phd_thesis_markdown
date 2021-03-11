@@ -48,7 +48,7 @@ pdf:
 		--variable=fontsize:12pt \
 		--variable=papersize:a4paper \
 		--variable=documentclass:report \
-		--pdf-engine=xelatex \
+		--pdf-engine=tectonic \
 		"$(INPUTDIR)"/*.md \
 		"$(INPUTDIR)/metadata.yml" \
 		--filter=pandoc-shortcaption \
@@ -83,13 +83,13 @@ tex:
 html:
 	pandoc  \
 		--output "$(OUTPUTDIR)/thesis.html" \
-		--template="$(STYLEDIR)/template.html" \
 		--include-in-header="$(STYLEDIR)/style.css" \
 		--toc \
+		--mathjax \
 		"$(INPUTDIR)"/*.md \
 		"$(INPUTDIR)/metadata.yml" \
-		--filter=pandoc-shortcaption \
 		--filter=pandoc-xnos \
+		--filter=pandoc-shortcaption \
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
 		--csl="$(STYLEDIR)/ref_format.csl" \
