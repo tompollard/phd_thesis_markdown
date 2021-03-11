@@ -35,7 +35,7 @@ p a {
     white-space: pre;
 }
 code {
-    
+    text-align: left;
 }
 blockquote {
     border-left: 3px solid #eee;

@@ -43,9 +43,9 @@ http://pandoc.org/MANUAL.html#extension-link_attributes
 
 ![RV Calypso is a former British Royal Navy minesweeper converted into a research vessel for the oceanographic researcher Jacques-Yves Cousteau. It was equipped with a mobile laboratory for underwater field research.](source/figures/example_figure.pdf "It's a boat"){#fig:my_fig width=100%}
 
-## Conclusion
+## Conclusion {#sec:mylabel}
 
-This is the conclusion to the chapter. Quisque nec purus a quam consectetur volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In lorem justo, convallis quis lacinia eget, laoreet eu metus. Fusce blandit tellus tellus. Curabitur nec cursus odio. Quisque tristique eros nulla, vitae finibus lorem aliquam quis. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+$\tau$ This is the conclusion to the chapter. Quisque nec purus a quam consectetur volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In lorem justo, convallis quis lacinia eget, laoreet eu metus. Fusce blandit tellus tellus. Curabitur nec cursus odio. Quisque tristique eros nulla, vitae finibus lorem aliquam quis. Interdum et malesuada fames ac ante ipsum primis in faucibus.  (Section @sec:mylabel)
 
 <!--
 Below is an example that does not utilize the shortcaption feature, as it already fits neatly on a line. Note that multiple file formats are acceptable for sources (jpg, tiff, pdf, etc.)

@@ -93,6 +93,18 @@ $if(listings)$
 $endif$
 $if(lhs)$
 \lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
+\lstnewenvironment{code}{\lstset{%
+    language         = Julia,
+    basicstyle       = \small\ttfamily,
+    keywordstyle     = \bfseries\color{blue},
+    stringstyle      = \color{magenta},
+    commentstyle     = \color{gray},
+    showstringspaces = false,
+    %numbers=left,                    
+    %numbersep=5pt,
+    %numberstyle=\color{gray},
+    backgroundcolor=\color{backcolour}
+}}
 $endif$
 $if(highlighting-macros)$
 $highlighting-macros$
