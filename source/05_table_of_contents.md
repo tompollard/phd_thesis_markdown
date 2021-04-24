@@ -1,4 +1,4 @@
-\pagenumbering{gobble}
+\pagenumbering{arabic}
 
 \tableofcontents
 
