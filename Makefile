@@ -1,5 +1,5 @@
 PY=python
-PANDOC=pandoc
+$(PANDOC)=pandoc
 
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/source
@@ -25,7 +25,7 @@ help:
 	@echo 'get local templates with: pandoc -D latex/html/etc'
 	@echo 'or generic ones from: https://github.com/jgm/pandoc-templates'
 
-ifeq ($(OS),Windows_NT) 
+ifeq ($(OS),Windows_NT)
 	detected_OS=Windows
 else
 	detected_OS=$(shell sh -c 'uname 2>/dev/null || echo Unknown')
@@ -41,7 +41,7 @@ install:
 endif
 
 pdf:
-	pandoc  \
+	$(PANDOC)  \
 		--output "$(OUTPUTDIR)/thesis.pdf" \
 		--template="$(STYLEDIR)/template.tex" \
 		--include-in-header="$(STYLEDIR)/preamble.tex" \
@@ -61,7 +61,7 @@ pdf:
 		2>pandoc.pdf.log
 
 tex:
-	pandoc  \
+	$(PANDOC)  \
 		--output "$(OUTPUTDIR)/thesis.tex" \
 		--template="$(STYLEDIR)/template.tex" \
 		--include-in-header="$(STYLEDIR)/preamble.tex" \
@@ -81,7 +81,7 @@ tex:
 		2>pandoc.tex.log
 
 html:
-	pandoc  \
+	$(PANDOC)  \
 		--output "$(OUTPUTDIR)/thesis.html" \
 		--template="$(STYLEDIR)/template.html" \
 		--include-in-header="$(STYLEDIR)/style.css" \
@@ -101,7 +101,7 @@ html:
 	cp -r "$(INPUTDIR)/figures" "$(OUTPUTDIR)/source/figures"
 
 docx:
-	pandoc  \
+	$(PANDOC)  \
 		--output "$(OUTPUTDIR)/thesis.docx" \
 		--toc \
 		"$(INPUTDIR)"/*.md \
