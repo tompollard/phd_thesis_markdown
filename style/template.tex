@@ -41,7 +41,7 @@ $endif$
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-\mathbf{$if(euro)$
+\mathbf{$if(euro)$}
   \usepackage{eurosym}
 $endif$
 \else % if luatex or xelatex
@@ -202,7 +202,7 @@ $endfor$
 
     % Delete the following line
     % to remove the UCL header logo
-    % \ThisULCornerWallPaper{1.0}{style/univ_logo.eps}
+    \ThisULCornerWallPaper{1.0}{style/univ_logo.eps}
 
         \vspace*{2.5cm}
 
