@@ -21,4 +21,8 @@ secPrefix:
 tblPrefix:
   - "Table"
   - "Tables"
+lstPrefix:
+  - "Listing"
+  - "Listings"
+codeBlockCaptions: true
 ---
