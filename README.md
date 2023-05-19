@@ -47,7 +47,7 @@ There are several ways to install TeXLive. [This guide](https://help.ubuntu.com/
 
 ## Should I use this template?
 
-## Why write my thesis in Markdown?
+### Why write my thesis in Markdown?
 
 Markdown is a super-friendly plain text format that can be easily converted to a bunch of other formats like PDF, Word and LaTeX. You'll enjoy working in Markdown because:
 - it is a clean, plain-text format...
@@ -59,7 +59,7 @@ Markdown is a super-friendly plain text format that can be easily converted to a
 - it is able to take advantage of autocompletion capabilities for figures and citations in several text editors (VSCode, Sublime, etc.)
 - there is no lock-in. If you decide that Markdown isn't for you, then just output to Word, or whatever, and continue working in the new format.
 
-## Are there any reasons not to use Markdown?
+### Are there any reasons not to use Markdown?
 
 There are some minor annoyances:
 - if you haven't worked with Markdown before then you'll find yourself referring to the style-guide (`pandoc` User Guide) fairly often at first.
