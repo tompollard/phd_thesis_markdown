@@ -67,7 +67,7 @@ There are some minor annoyances:
 - the style documents in this framework could be improved. The PDF and HTML (thanks [@ArcoMul](https://github.com/ArcoMul)) outputs are acceptable, but ~~HTML and~~ Word needs work if you plan to output to this format.  
 - ... if there are more, please add them here.
 
-## Template instructions
+## Detailed template information
 
 ### How is the template organised?
 
