@@ -1,4 +1,4 @@
-# Research containing a table
+# Research containing a table {#sec:research-table}
 
 ## Introduction
 
@@ -24,7 +24,7 @@ Comments can be added like this.
 
 <!-- Table formatting works same as figure formatting -->
 
-Table @tbl:random shows us how to add a table. Integer tincidunt sed nisl eget pellentesque. Mauris eleifend, nisl non lobortis fringilla, sapien eros aliquet orci, vitae pretium massa neque eu turpis. Pellentesque tincidunt aliquet volutpat. Ut ornare dui id ex sodales laoreet.
+[@tbl:random] shows us how to add a table. Integer tincidunt sed nisl eget pellentesque. Mauris eleifend, nisl non lobortis fringilla, sapien eros aliquet orci, vitae pretium massa neque eu turpis. Pellentesque tincidunt aliquet volutpat. Ut ornare dui id ex sodales laoreet.
 
 <!-- Force the table onto a newpage -->
 
@@ -54,11 +54,11 @@ Oceania      87%     4044         4127         5,540        6,972        1.28
 Antarctica    83%     2964         3175         4,402        4,941        1.13
 -----------------------------------------------------------------------------------
 
-Table: Important data for various land masses. {#tbl:random}
+: Important data for various land masses. []{#tbl:random short-caption="Table short caption"}
 
 ## Discussion
 
-This is the discussion. As we saw in Table @tbl:random, many things are true, and other things are not. Etiam sit amet mi eros. Donec vel nisi sed purus gravida fermentum at quis odio. Vestibulum quis nisl sit amet justo maximus molestie. Maecenas vitae arcu erat. Nulla facilisi. Nam pretium mauris eu enim porttitor, a mattis velit dictum. Nulla sit amet ligula non mauris volutpat fermentum quis vitae sapien.
+This is the discussion. As we saw in @tbl:random, many things are true, and other things are not. Etiam sit amet mi eros. Donec vel nisi sed purus gravida fermentum at quis odio. Vestibulum quis nisl sit amet justo maximus molestie. Maecenas vitae arcu erat. Nulla facilisi. Nam pretium mauris eu enim porttitor, a mattis velit dictum. Nulla sit amet ligula non mauris volutpat fermentum quis vitae sapien.
 
 ## Conclusion
 

@@ -1,4 +1,4 @@
-# First research study, with code
+# First research study, with code {#sec:research-code}
 
 ## Introduction
 
@@ -8,7 +8,7 @@ This is the introduction. Nam mollis congue tortor, sit amet convallis tortor mo
 
 Suspendisse iaculis in lacus ut dignissim. Cras dignissim dictum eleifend. Suspendisse potenti. Suspendisse et nisi suscipit, vestibulum est at, maximus sapien. Sed ut diam tortor.
 
-### Subsection 1 with example code block
+### Subsection 1 with example code block {#sec:subsec-code}
 
 This is the first part of the methodology. Cras porta dui a dolor tincidunt placerat. Cras scelerisque sem et malesuada vestibulum. Vivamus faucibus ligula ac sodales consectetur. Aliquam vel tristique nisl. Aliquam erat volutpat. Pellentesque iaculis enim sit amet posuere facilisis. Integer egestas quam sit amet nunc maximus, id bibendum ex blandit.
 
@@ -20,9 +20,13 @@ if mood == 'happy':
     print("I am a happy robot")
 ```
 
+: Code caption {#lst:code}
+
+You can then reference the code block like this (@lst:code).
+
 ### Subsection 2
 
-By running the code in +@sec:subsection-1-with-example-code-block, we solved AI completely. This is the second part of the methodology. Proin tincidunt odio non sem mollis tristique. Fusce pharetra accumsan volutpat. In nec mauris vel orci rutrum dapibus nec ac nibh. Praesent malesuada sagittis nulla, eget commodo mauris ultricies eget. Suspendisse iaculis finibus ligula.
+By running the code in @sec:subsec-code, we solved AI completely. This is the second part of the methodology. Proin tincidunt odio non sem mollis tristique. Fusce pharetra accumsan volutpat. In nec mauris vel orci rutrum dapibus nec ac nibh. Praesent malesuada sagittis nulla, eget commodo mauris ultricies eget. Suspendisse iaculis finibus ligula.
 
 <!-- 
 Comments can be added like this.

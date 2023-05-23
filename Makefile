@@ -51,8 +51,9 @@ pdf:
 		--pdf-engine=xelatex \
 		"$(INPUTDIR)"/*.md \
 		"$(INPUTDIR)/metadata.yml" \
-		--filter=pandoc-shortcaption \
-		--filter=pandoc-xnos \
+		--lua-filter=filters/figure-short-captions.lua \
+		--lua-filter=filters/table-short-captions.lua \
+		--filter=pandoc-crossref \
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
 		--csl="$(STYLEDIR)/ref_format.csl" \
@@ -71,8 +72,9 @@ tex:
 		--pdf-engine=xelatex \
 		"$(INPUTDIR)"/*.md \
 		"$(INPUTDIR)/metadata.yml" \
-		--filter=pandoc-shortcaption \
-		--filter=pandoc-xnos \
+		--lua-filter=filters/figure-short-captions.lua \
+		--lua-filter=filters/table-short-captions.lua \
+		--filter=pandoc-crossref \
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
 		--csl="$(STYLEDIR)/ref_format.csl" \
@@ -88,8 +90,9 @@ html:
 		--toc \
 		"$(INPUTDIR)"/*.md \
 		"$(INPUTDIR)/metadata.yml" \
-		--filter=pandoc-shortcaption \
-		--filter=pandoc-xnos \
+		--lua-filter=filters/figure-short-captions.lua \
+		--lua-filter=filters/table-short-captions.lua \
+		--filter=pandoc-crossref \
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
 		--csl="$(STYLEDIR)/ref_format.csl" \
@@ -106,8 +109,9 @@ docx:
 		--toc \
 		"$(INPUTDIR)"/*.md \
 		"$(INPUTDIR)/metadata.yml" \
-		--filter=pandoc-shortcaption \
-		--filter=pandoc-xnos \
+		--lua-filter=filters/figure-short-captions.lua \
+		--lua-filter=filters/table-short-captions.lua \
+		--filter=pandoc-crossref \
 		--bibliography="$(BIBFILE)" \
 		--citeproc \
 		--csl="$(STYLEDIR)/ref_format.csl" \

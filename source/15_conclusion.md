@@ -1,4 +1,4 @@
-# Conclusion
+# Conclusion {#sec:conclusion}
 
 <!-- 
 A chapter that concludes the thesis by summarising the learning points

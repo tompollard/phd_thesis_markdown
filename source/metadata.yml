@@ -9,4 +9,20 @@ supervisor:
 - Professor Louis Fage
 - Captain J. Y. Cousteau
 degree: Doctor of Philosophy
+eqnPrefix:
+  - "Equation"
+  - "Equations"
+figPrefix:
+  - "Figure"
+  - "Figures"
+secPrefix:
+  - "Section"
+  - "Sections"
+tblPrefix:
+  - "Table"
+  - "Tables"
+lstPrefix:
+  - "Listing"
+  - "Listings"
+codeBlockCaptions: true
 ---
